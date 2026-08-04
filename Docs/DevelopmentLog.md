@@ -66,5 +66,5 @@
 - Visual evidence: final 1334×750, 1920×1080, 2436×1125, 2340×1080, 2532×1170, 2796×1290, and 2732×2048 Main Menu captures plus Settings, Credits, Intro, How to Play, Level Select, gameplay/mobile controls, pause, failure, victory, and Completion. All were visually inspected.
 - Bugs fixed: tablet menu clipping, D-pad bottom-edge clipping, crowded gameplay action buttons, missing direction glyphs, credits overlap/scroll position, settings slider fill sizing, modal base-input leaks, hint direct-command leak, invalid last-played save bounds, and stale screenshot Sprite importer rectangles.
 - Final builds: Android release IL2CPP/ARM64 PASS in 24.01 s with 0/0; iOS Unity export PASS in 45.15 s with 0/0; refreshed unsigned iphoneos Xcode compile PASS with `** BUILD SUCCEEDED **`.
-- Commit hash: pending stable UI redesign checkpoint.
+- Stable implementation/evidence commit: `1a8525c` (`feat: complete commercial UI redesign`).
 - Remaining limitations: physical-device thermal/haptic and assistive-technology review plus store signing/archive submission require external hardware/credentials.
