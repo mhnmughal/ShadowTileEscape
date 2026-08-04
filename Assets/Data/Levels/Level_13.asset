@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44801189d18a4d96af614a3ac082f2e, type: 3}
+  m_Name: Level_13
+  m_EditorClassIdentifier: ShadowTileEscape.Runtime::ShadowTileEscape.LevelDefinition
+  levelNumber: 13
+  displayName: Guarded Geometry
+  chapterName: Living Light
+  objectiveText: 'Living Light: solve Guarded Geometry and reach the exit.'
+  hintText: Use Interact on the object in front of Noor; Undo preserves experimentation.
+  verifiedSolution: N,E,I,N,N,N,E,E,E,E,S,I,N,E
+  width: 7
+  height: 5
+  par: 14
+  requiredShards: 0
+  requiredLampRotations: 0
+  requiredMirrorRotations: 1
+  requiredBoxPushes: 1
+  requiredCurtainToggles: 0
+  cells: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  playerStart:
+    x: 0
+    y: 0
+  playerFacing: 1
+  exit:
+    x: 6
+    y: 4
+  lights: []
+  mirrors:
+  - position:
+      x: 5
+      y: 2
+    kind: 0
+    rotatable: 1
+  boxes:
+  - x: 2
+    y: 1
+  curtains: []
+  guards:
+  - position:
+      x: 6
+      y: 0
+    patrol:
+    - x: 6
+      y: 0
+    - x: 5
+      y: 0
+    patrolIndex: 0
+    facing: 3
+    lightRange: 1
+  movingLights: []
+  shards: []

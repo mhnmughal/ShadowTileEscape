@@ -27,6 +27,9 @@ namespace ShadowTileEscape
     {
         public int version = SaveGameService.CurrentVersion;
         public int unlockedLevel = 1;
+        public int lastPlayedLevel = 1;
+        public bool introViewed;
+        public bool tutorialViewed;
         public LevelProgress[] levels = CreateLevels();
         public GameSettings settings = new GameSettings();
 
@@ -57,9 +60,11 @@ namespace ShadowTileEscape
     public sealed class SaveGameService
     {
         public const int CurrentVersion = 1;
+        public static Func<string> CurrentDirectoryProvider { get; set; } = () => Application.persistentDataPath;
         readonly string primaryPath;
         readonly string backupPath;
         readonly string temporaryPath;
+        public bool HasUnsupportedSave { get; private set; }
 
         public SaveGameService(string directory)
         {
@@ -68,17 +73,20 @@ namespace ShadowTileEscape
             temporaryPath = primaryPath + ".tmp";
         }
 
-        public static SaveGameService ForCurrentUser() => new SaveGameService(Application.persistentDataPath);
+        public static SaveGameService ForCurrentUser() => new SaveGameService(CurrentDirectoryProvider());
 
         public SaveData Load()
         {
+            HasUnsupportedSave = false;
             if (TryLoad(primaryPath, out var primary)) return primary;
+            if (HasUnsupportedSave) return new SaveData();
             if (TryLoad(backupPath, out var backup)) return backup;
             return new SaveData();
         }
 
         public void Save(SaveData data)
         {
+            if (HasUnsupportedSave) throw new InvalidOperationException("A newer save version exists and will not be overwritten.");
             if (!IsValid(data)) throw new InvalidDataException("Save data is outside supported bounds.");
             Directory.CreateDirectory(Path.GetDirectoryName(primaryPath));
             WriteFlushed(temporaryPath, JsonUtility.ToJson(data, true));
@@ -107,6 +115,12 @@ namespace ShadowTileEscape
             try
             {
                 data = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
+                if (data != null && data.version > CurrentVersion)
+                {
+                    HasUnsupportedSave = true;
+                    data = null;
+                    return false;
+                }
                 return IsValid(data);
             }
             catch (Exception exception) when (exception is IOException || exception is UnauthorizedAccessException || exception is ArgumentException)
@@ -118,6 +132,7 @@ namespace ShadowTileEscape
         static bool IsValid(SaveData data)
         {
             if (data == null || data.version != CurrentVersion || data.unlockedLevel < 1 || data.unlockedLevel > 15) return false;
+            if (data.lastPlayedLevel < 1 || data.lastPlayedLevel > 15) return false;
             if (data.levels == null || data.levels.Length != 15 || data.settings == null) return false;
             for (var i = 0; i < data.levels.Length; i++)
             {
@@ -126,6 +141,14 @@ namespace ShadowTileEscape
             }
             return data.settings.musicVolume >= 0 && data.settings.musicVolume <= 1
                 && data.settings.sfxVolume >= 0 && data.settings.sfxVolume <= 1;
+        }
+
+        public void ResetConfirmed()
+        {
+            if (File.Exists(primaryPath)) File.Delete(primaryPath);
+            if (File.Exists(backupPath)) File.Delete(backupPath);
+            if (File.Exists(temporaryPath)) File.Delete(temporaryPath);
+            HasUnsupportedSave = false;
         }
 
         static void WriteFlushed(string path, string json)

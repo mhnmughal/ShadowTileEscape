@@ -45,6 +45,8 @@ namespace ShadowTileEscape
         public Direction direction;
         public int range;
         public bool active;
+        public bool fixedDirection;
+        public int allowedDirectionMask;
     }
 
     [Serializable]
@@ -68,12 +70,38 @@ namespace ShadowTileEscape
         public GridCoord position;
         public GridCoord[] patrol = Array.Empty<GridCoord>();
         public int patrolIndex;
+        public Direction facing;
+        public int lightRange;
 
         public GuardState Copy() => new GuardState
         {
             position = position,
             patrol = (GridCoord[])patrol.Clone(),
-            patrolIndex = patrolIndex
+            patrolIndex = patrolIndex,
+            facing = facing,
+            lightRange = lightRange
+        };
+    }
+
+    [Serializable]
+    public sealed class MovingLightState
+    {
+        public GridCoord[] path = Array.Empty<GridCoord>();
+        public Direction[] directions = Array.Empty<Direction>();
+        public int pathIndex;
+        public int range = 3;
+        public bool active = true;
+
+        public GridCoord Position => path.Length == 0 ? default : path[Math.Min(pathIndex, path.Length - 1)];
+        public Direction Direction => directions.Length == 0 ? Direction.South : directions[Math.Min(pathIndex, directions.Length - 1)];
+
+        public MovingLightState Copy() => new MovingLightState
+        {
+            path = (GridCoord[])path.Clone(),
+            directions = (Direction[])directions.Clone(),
+            pathIndex = pathIndex,
+            range = range,
+            active = active
         };
     }
 
@@ -87,14 +115,23 @@ namespace ShadowTileEscape
         public Direction playerFacing;
         public GridCoord exit;
         public int requiredShards;
+        public int requiredLampRotations;
+        public int requiredMirrorRotations;
+        public int requiredBoxPushes;
+        public int requiredCurtainToggles;
         public LightSourceState[] lights = Array.Empty<LightSourceState>();
         public MirrorState[] mirrors = Array.Empty<MirrorState>();
         public GridCoord[] boxes = Array.Empty<GridCoord>();
         public CurtainState[] curtains = Array.Empty<CurtainState>();
         public GuardState[] guards = Array.Empty<GuardState>();
+        public MovingLightState[] movingLights = Array.Empty<MovingLightState>();
         public GridCoord[] shards = Array.Empty<GridCoord>();
         public bool[] collectedShards = Array.Empty<bool>();
         public int moveCount;
+        public int lampRotations;
+        public int mirrorRotations;
+        public int boxPushes;
+        public int curtainToggles;
         public bool failed;
         public bool completed;
 
@@ -114,6 +151,8 @@ namespace ShadowTileEscape
             copy.collectedShards = (bool[])collectedShards.Clone();
             copy.guards = new GuardState[guards.Length];
             for (var i = 0; i < guards.Length; i++) copy.guards[i] = guards[i].Copy();
+            copy.movingLights = new MovingLightState[movingLights.Length];
+            for (var i = 0; i < movingLights.Length; i++) copy.movingLights[i] = movingLights[i].Copy();
             return copy;
         }
 

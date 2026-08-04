@@ -14,10 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: ShadowTileEscape.Runtime::ShadowTileEscape.LevelDefinition
   levelNumber: 1
   displayName: The Quiet Lantern
+  chapterName: Silent Halls
+  objectiveText: Move the box, turn the lamp and mirror, recover the shard, then
+    escape.
+  hintText: Push the box beneath the lamp before turning its beam south.
+  verifiedSolution: N,E,I,N,E,I,N,N,E,E,E,S,I,N,E
   width: 7
   height: 5
-  par: 10
+  par: 15
   requiredShards: 1
+  requiredLampRotations: 1
+  requiredMirrorRotations: 1
+  requiredBoxPushes: 1
+  requiredCurtainToggles: 0
   cells: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   playerStart:
     x: 0
@@ -31,12 +40,22 @@ MonoBehaviour:
       x: 3
       y: 2
     direction: 1
-    range: 3
+    range: 4
     active: 1
-  mirrors: []
-  boxes: []
+    fixedDirection: 0
+    allowedDirectionMask: 0
+  mirrors:
+  - position:
+      x: 5
+      y: 2
+    kind: 0
+    rotatable: 1
+  boxes:
+  - x: 2
+    y: 1
   curtains: []
   guards: []
+  movingLights: []
   shards:
   - x: 5
     y: 4

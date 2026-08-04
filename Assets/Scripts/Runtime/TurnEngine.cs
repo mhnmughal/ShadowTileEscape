@@ -50,6 +50,7 @@ namespace ShadowTileEscape
             }
 
             AdvanceGuards(next);
+            AdvanceMovingLights(next);
             if (IsPlayerUnsafe(next) || HasGuardAt(next, next.player))
             {
                 next.failed = true;
@@ -58,7 +59,7 @@ namespace ShadowTileEscape
             }
 
             CollectShards(next);
-            if (next.player == next.exit && next.ShardsCollected >= next.requiredShards)
+            if (next.player == next.exit && ObjectivesMet(next))
             {
                 next.completed = true;
                 State = next;
@@ -84,6 +85,15 @@ namespace ShadowTileEscape
             history.Clear();
         }
 
+        public GridCoord[] PreviewGuardPositions()
+        {
+            var preview = State.Copy();
+            AdvanceGuards(preview);
+            var positions = new GridCoord[preview.guards.Length];
+            for (var i = 0; i < positions.Length; i++) positions[i] = preview.guards[i].position;
+            return positions;
+        }
+
         bool TryMove(LevelState state, Direction direction)
         {
             state.playerFacing = direction;
@@ -100,8 +110,21 @@ namespace ShadowTileEscape
             {
                 if (state.lights[i].position != target) continue;
                 var item = state.lights[i];
-                item.direction = (Direction)(((int)item.direction + 1) % 4);
+                if (item.fixedDirection) return false;
+                var next = item.direction;
+                var changed = false;
+                for (var step = 1; step <= 4; step++)
+                {
+                    var candidate = (Direction)(((int)item.direction + step) % 4);
+                    if (item.allowedDirectionMask != 0 && (item.allowedDirectionMask & (1 << (int)candidate)) == 0) continue;
+                    next = candidate;
+                    changed = candidate != item.direction;
+                    break;
+                }
+                if (!changed) return false;
+                item.direction = next;
                 state.lights[i] = item;
+                state.lampRotations++;
                 return true;
             }
             for (var i = 0; i < state.mirrors.Length; i++)
@@ -110,6 +133,7 @@ namespace ShadowTileEscape
                 var item = state.mirrors[i];
                 item.kind = item.kind == MirrorKind.Slash ? MirrorKind.Backslash : MirrorKind.Slash;
                 state.mirrors[i] = item;
+                state.mirrorRotations++;
                 return true;
             }
             for (var i = 0; i < state.curtains.Length; i++)
@@ -118,14 +142,16 @@ namespace ShadowTileEscape
                 var item = state.curtains[i];
                 item.open = !item.open;
                 state.curtains[i] = item;
+                state.curtainToggles++;
                 return true;
             }
             for (var i = 0; i < state.boxes.Length; i++)
             {
                 if (state.boxes[i] != target) continue;
                 var beyond = target + GridDirections.Offset(state.playerFacing);
-                if (!IsWalkable(state, beyond)) return false;
+                if (!CanBoxEnter(state, beyond)) return false;
                 state.boxes[i] = beyond;
+                state.boxPushes++;
                 return true;
             }
             return false;
@@ -150,6 +176,13 @@ namespace ShadowTileEscape
             return false;
         }
 
+        static bool CanBoxEnter(LevelState state, GridCoord c)
+        {
+            if (!IsWalkable(state, c) || HasGuardAt(state, c) || state.player == c || state.exit == c) return false;
+            for (var i = 0; i < state.curtains.Length; i++) if (state.curtains[i].position == c) return false;
+            return true;
+        }
+
         static void AdvanceGuards(LevelState state)
         {
             var count = state.guards.Length;
@@ -164,6 +197,7 @@ namespace ShadowTileEscape
                 targets[i] = guard.patrol[nextIndex];
                 moves[i] = IsWalkable(state, targets[i]);
             }
+            var rejected = new bool[count];
             for (var i = 0; i < count; i++)
             {
                 if (!moves[i]) continue;
@@ -171,22 +205,68 @@ namespace ShadowTileEscape
                 {
                     var contested = targets[i] == targets[j];
                     var swap = targets[i] == state.guards[j].position && targets[j] == state.guards[i].position;
-                    if (contested || swap) { moves[i] = false; moves[j] = false; }
+                    if (contested || swap) { rejected[i] = true; rejected[j] = true; }
                 }
+            }
+            for (var i = 0; i < count; i++) if (rejected[i]) moves[i] = false;
+            for (var pass = 0; pass < count; pass++)
+            {
+                var changed = false;
+                for (var i = 0; i < count; i++)
+                {
+                    if (!moves[i]) continue;
+                    for (var j = 0; j < count; j++)
+                    {
+                        if (i == j || targets[i] != state.guards[j].position || moves[j]) continue;
+                        moves[i] = false;
+                        changed = true;
+                        break;
+                    }
+                }
+                if (!changed) break;
             }
             for (var i = 0; i < count; i++)
             {
                 if (!moves[i]) continue;
                 var guard = state.guards[i];
+                guard.facing = DirectionFromDelta(guard.position, targets[i], guard.facing);
                 guard.position = targets[i];
                 guard.patrolIndex = (guard.patrolIndex + 1) % guard.patrol.Length;
             }
+        }
+
+        static void AdvanceMovingLights(LevelState state)
+        {
+            for (var i = 0; i < state.movingLights.Length; i++)
+            {
+                var moving = state.movingLights[i];
+                if (!moving.active || moving.path.Length == 0) continue;
+                moving.pathIndex = (moving.pathIndex + 1) % moving.path.Length;
+            }
+        }
+
+        static Direction DirectionFromDelta(GridCoord from, GridCoord to, Direction fallback)
+        {
+            var dx = to.x - from.x;
+            var dy = to.y - from.y;
+            if (Math.Abs(dx) > Math.Abs(dy)) return dx > 0 ? Direction.East : Direction.West;
+            if (dy != 0) return dy > 0 ? Direction.North : Direction.South;
+            return fallback;
         }
 
         static void CollectShards(LevelState state)
         {
             for (var i = 0; i < state.shards.Length; i++)
                 if (!state.collectedShards[i] && state.shards[i] == state.player) state.collectedShards[i] = true;
+        }
+
+        static bool ObjectivesMet(LevelState state)
+        {
+            return state.ShardsCollected >= state.requiredShards
+                && state.lampRotations >= state.requiredLampRotations
+                && state.mirrorRotations >= state.requiredMirrorRotations
+                && state.boxPushes >= state.requiredBoxPushes
+                && state.curtainToggles >= state.requiredCurtainToggles;
         }
 
         void PushHistory(LevelState snapshot)

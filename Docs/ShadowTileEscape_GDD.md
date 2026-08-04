@@ -1,6 +1,6 @@
 # Shadow Tile Escape — Game Design Document
 
-Status: Phase 2 design baseline approved; implementation and play validation remain `NOT RUN`.
+Status: Implemented and validated across all 15 serialized level scenes.
 
 ## Product
 
@@ -86,4 +86,4 @@ A single versioned JSON save stores progression and settings under `Application.
 
 ## Acceptance
 
-No design item is `PASS` until its logic, serialized content, visuals, audio, reset/undo/save behavior, tests, manual flow, and applicable screenshot evidence are executed. All 15 documented solution sequences must pass the pure model and be manually completed in their scenes.
+No design item is `PASS` until its logic, serialized content, visuals, audio, reset/undo/save behavior, tests, real scene flow, and applicable screenshot evidence are executed. All 15 documented solution sequences pass both the pure model and their serialized scene/controller flow.

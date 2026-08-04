@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44801189d18a4d96af614a3ac082f2e, type: 3}
+  m_Name: Level_15
+  m_EditorClassIdentifier: ShadowTileEscape.Runtime::ShadowTileEscape.LevelDefinition
+  levelNumber: 15
+  displayName: The Last Shadow
+  chapterName: Living Light
+  objectiveText: 'Living Light: solve The Last Shadow and reach the exit.'
+  hintText: Use Interact on the object in front of Noor; Undo preserves experimentation.
+  verifiedSolution: N,E,I,N,E,I,S,S,E,E,N,I,S,E,N,I,E,N,N,N
+  width: 7
+  height: 5
+  par: 20
+  requiredShards: 2
+  requiredLampRotations: 1
+  requiredMirrorRotations: 1
+  requiredBoxPushes: 1
+  requiredCurtainToggles: 1
+  cells: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  playerStart:
+    x: 0
+    y: 0
+  playerFacing: 1
+  exit:
+    x: 6
+    y: 4
+  lights:
+  - position:
+      x: 3
+      y: 2
+    direction: 1
+    range: 4
+    active: 1
+    fixedDirection: 0
+    allowedDirectionMask: 0
+  mirrors:
+  - position:
+      x: 5
+      y: 2
+    kind: 0
+    rotatable: 1
+  boxes:
+  - x: 2
+    y: 1
+  curtains:
+  - position:
+      x: 4
+      y: 2
+    open: 0
+  guards:
+  - position:
+      x: 1
+      y: 4
+    patrol:
+    - x: 1
+      y: 4
+    - x: 0
+      y: 4
+    patrolIndex: 0
+    facing: 2
+    lightRange: 0
+  movingLights:
+  - path:
+    - x: 0
+      y: 0
+    - x: 1
+      y: 0
+    directions: 0300000003000000
+    pathIndex: 0
+    range: 3
+    active: 1
+  shards:
+  - x: 6
+    y: 2
+  - x: 6
+    y: 3

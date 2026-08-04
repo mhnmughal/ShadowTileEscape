@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,8 +19,14 @@ namespace ShadowTileEscape
         [SerializeField] Image[] lightViews;
         [SerializeField] RectTransform playerView;
         [SerializeField] RectTransform exitView;
-        [SerializeField] RectTransform lampView;
-        [SerializeField] RectTransform shardView;
+        [SerializeField] RectTransform[] lampViews;
+        [SerializeField] RectTransform[] mirrorViews;
+        [SerializeField] RectTransform[] boxViews;
+        [SerializeField] RectTransform[] curtainViews;
+        [SerializeField] RectTransform[] guardViews;
+        [SerializeField] RectTransform[] guardPreviewViews;
+        [SerializeField] RectTransform[] movingLightViews;
+        [SerializeField] RectTransform[] shardViews;
         [SerializeField] float cellSize = 96f;
 
         [Header("HUD")]
@@ -28,13 +36,27 @@ namespace ShadowTileEscape
         [SerializeField] TMP_Text lampDirectionLabel;
         [SerializeField] GameObject failurePanel;
         [SerializeField] GameObject victoryPanel;
+        [SerializeField] GameObject pausePanel;
         [SerializeField] Button undoButton;
+
+        [Header("Feedback")]
+        [SerializeField] RectTransform turnPulseView;
+        [SerializeField] AudioSource sfxSource;
+        [SerializeField] AudioSource ambienceSource;
+        [SerializeField] AudioClip moveClip;
+        [SerializeField] AudioClip interactClip;
+        [SerializeField] AudioClip undoClip;
+        [SerializeField] AudioClip failureClip;
+        [SerializeField] AudioClip victoryClip;
+        [SerializeField] float presentationDuration = 0.08f;
 
         readonly LightSolver lightSolver = new LightSolver();
         TurnEngine engine;
         LevelState initialState;
         SaveGameService saveService;
         bool completionSaved;
+        bool paused;
+        bool inputLocked;
 
         public LevelDefinition Definition
         {
@@ -52,22 +74,29 @@ namespace ShadowTileEscape
             initialState = definition.CreateState();
             engine = new TurnEngine(initialState);
             saveService = SaveGameService.ForCurrentUser();
+            var sessionSave = saveService.Load();
+            if (ambienceSource != null) ambienceSource.volume = 0.18f * sessionSave.settings.musicVolume;
+            if (sfxSource != null) sfxSource.volume = sessionSave.settings.sfxVolume;
+            sessionSave.lastPlayedLevel = definition.levelNumber;
+            if (!saveService.HasUnsupportedSave) saveService.Save(sessionSave);
             levelLabel.text = $"LEVEL {definition.levelNumber:00}  ·  {definition.displayName}";
+            statusLabel.text = definition.objectiveText;
             Refresh();
         }
 
         void Update()
         {
-            if (engine == null || engine.State.failed || engine.State.completed || Keyboard.current == null) return;
+            if (engine == null || Keyboard.current == null) return;
             var keyboard = Keyboard.current;
+            if (keyboard.escapeKey.wasPressedThisFrame) { TogglePause(); return; }
+            if (keyboard.zKey.wasPressedThisFrame || keyboard.backspaceKey.wasPressedThisFrame) { Undo(); return; }
+            if (keyboard.rKey.wasPressedThisFrame) { Restart(); return; }
+            if (paused || engine.State.failed || engine.State.completed) return;
             if (keyboard.wKey.wasPressedThisFrame || keyboard.upArrowKey.wasPressedThisFrame) MoveNorth();
             else if (keyboard.dKey.wasPressedThisFrame || keyboard.rightArrowKey.wasPressedThisFrame) MoveEast();
             else if (keyboard.sKey.wasPressedThisFrame || keyboard.downArrowKey.wasPressedThisFrame) MoveSouth();
             else if (keyboard.aKey.wasPressedThisFrame || keyboard.leftArrowKey.wasPressedThisFrame) MoveWest();
             else if (keyboard.eKey.wasPressedThisFrame || keyboard.spaceKey.wasPressedThisFrame) Interact();
-            else if (keyboard.zKey.wasPressedThisFrame || keyboard.backspaceKey.wasPressedThisFrame) Undo();
-            else if (keyboard.rKey.wasPressedThisFrame) Restart();
-            else if (keyboard.escapeKey.wasPressedThisFrame) BackToMenu();
         }
 
         public void MoveNorth() => Submit(PlayerCommand.Move(Direction.North));
@@ -78,23 +107,54 @@ namespace ShadowTileEscape
 
         public void Undo()
         {
+            if (paused || inputLocked) return;
             if (!engine.Undo()) return;
             statusLabel.text = "Turn rewound.";
             Refresh();
+            PlayFeedback(undoClip);
+            StartCoroutine(PresentTurn());
         }
 
         public void Restart()
         {
+            if (inputLocked) return;
             engine.Restart(initialState);
             completionSaved = false;
+            SetPaused(false);
             statusLabel.text = "Level restarted.";
             Refresh();
+            PlayFeedback(undoClip);
         }
 
         public void BackToMenu() => SceneManager.LoadScene("MainMenu");
+        public void OpenLevelSelect() => SceneManager.LoadScene("LevelSelect");
+        public void NextLevel()
+        {
+            if (definition.levelNumber >= 15) SceneManager.LoadScene("Completion");
+            else SceneManager.LoadScene($"Level_{definition.levelNumber + 1:00}");
+        }
+
+        public void TogglePause()
+        {
+            if (engine == null || engine.State.failed || engine.State.completed) return;
+            SetPaused(!paused);
+        }
+
+        public void Resume() => SetPaused(false);
+
+        void OnApplicationFocus(bool hasFocus)
+        {
+            if (!hasFocus && engine != null && !engine.State.failed && !engine.State.completed) SetPaused(true);
+        }
+
+        void OnApplicationPause(bool isPaused)
+        {
+            if (isPaused && engine != null && !engine.State.failed && !engine.State.completed) SetPaused(true);
+        }
 
         void Submit(PlayerCommand command)
         {
+            if (paused || inputLocked) return;
             var result = engine.TryExecute(command);
             if (!result.Accepted)
             {
@@ -110,10 +170,14 @@ namespace ShadowTileEscape
             {
                 var save = saveService.Load();
                 ProgressionRules.Complete(save, definition.levelNumber, engine.State.moveCount, definition.par, engine.State.ShardsCollected);
-                saveService.Save(save);
+                if (!saveService.HasUnsupportedSave) saveService.Save(save);
                 completionSaved = true;
             }
             Refresh();
+            PlayFeedback(result.outcome == TurnOutcome.Failed ? failureClip
+                : result.outcome == TurnOutcome.Completed ? victoryClip
+                : command.type == CommandType.Interact ? interactClip : moveClip);
+            StartCoroutine(PresentTurn());
         }
 
         void Refresh()
@@ -130,27 +194,123 @@ namespace ShadowTileEscape
             }
 
             Position(playerView, state.player);
+            if (turnPulseView != null) Position(turnPulseView, state.player);
             Position(exitView, state.exit);
             playerView.localEulerAngles = new Vector3(0, 0, FacingAngle(state.playerFacing));
 
-            if (state.lights.Length > 0)
+            for (var i = 0; i < lampViews.Length; i++)
             {
-                lampView.gameObject.SetActive(true);
-                Position(lampView, state.lights[0].position);
-                lampView.localEulerAngles = new Vector3(0, 0, FacingAngle(state.lights[0].direction));
-                lampDirectionLabel.text = $"LAMP  {DirectionGlyph(state.lights[0].direction)}";
+                var active = i < state.lights.Length;
+                lampViews[i].gameObject.SetActive(active);
+                if (!active) continue;
+                Position(lampViews[i], state.lights[i].position);
+                lampViews[i].localEulerAngles = new Vector3(0, 0, FacingAngle(state.lights[i].direction));
+            }
+            for (var i = 0; i < mirrorViews.Length; i++)
+            {
+                var active = i < state.mirrors.Length;
+                mirrorViews[i].gameObject.SetActive(active);
+                if (!active) continue;
+                Position(mirrorViews[i], state.mirrors[i].position);
+                mirrorViews[i].localEulerAngles = new Vector3(0, 0, state.mirrors[i].kind == MirrorKind.Slash ? 45 : -45);
+            }
+            RefreshPositionPool(boxViews, state.boxes);
+            for (var i = 0; i < curtainViews.Length; i++)
+            {
+                var active = i < state.curtains.Length;
+                curtainViews[i].gameObject.SetActive(active);
+                if (!active) continue;
+                Position(curtainViews[i], state.curtains[i].position);
+                var image = curtainViews[i].GetComponent<Image>();
+                image.color = state.curtains[i].open ? new Color32(154, 120, 212, 80) : new Color32(154, 120, 212, 255);
+            }
+            var preview = engine.PreviewGuardPositions();
+            for (var i = 0; i < guardViews.Length; i++)
+            {
+                var active = i < state.guards.Length;
+                guardViews[i].gameObject.SetActive(active);
+                guardPreviewViews[i].gameObject.SetActive(active && preview[i] != state.guards[i].position);
+                if (!active) continue;
+                Position(guardViews[i], state.guards[i].position);
+                guardViews[i].localEulerAngles = new Vector3(0, 0, FacingAngle(state.guards[i].facing));
+                if (guardPreviewViews[i].gameObject.activeSelf) Position(guardPreviewViews[i], preview[i]);
+            }
+            for (var i = 0; i < movingLightViews.Length; i++)
+            {
+                var active = i < state.movingLights.Length && state.movingLights[i].active && state.movingLights[i].path.Length > 0;
+                movingLightViews[i].gameObject.SetActive(active);
+                if (active) Position(movingLightViews[i], state.movingLights[i].Position);
+            }
+            for (var i = 0; i < shardViews.Length; i++)
+            {
+                var active = i < state.shards.Length && !state.collectedShards[i];
+                shardViews[i].gameObject.SetActive(active);
+                if (active) Position(shardViews[i], state.shards[i]);
             }
 
-            if (state.shards.Length > 0)
-            {
-                shardView.gameObject.SetActive(!state.collectedShards[0]);
-                Position(shardView, state.shards[0]);
-            }
+            lampDirectionLabel.text = state.lights.Length > 0
+                ? $"LAMP  {DirectionGlyph(state.lights[0].direction)}"
+                : definition.chapterName.ToUpperInvariant();
 
-            moveLabel.text = $"MOVES  {state.moveCount} / PAR {definition.par}   ·   SHARD {state.ShardsCollected}/{definition.requiredShards}";
+            moveLabel.text = $"MOVES {state.moveCount}/{definition.par}  ·  SHARD {state.ShardsCollected}/{definition.requiredShards}  ·  ACTIONS {ObjectiveActions(state)}";
             failurePanel.SetActive(state.failed);
             victoryPanel.SetActive(state.completed);
             undoButton.interactable = engine.HistoryCount > 0;
+        }
+
+        void SetPaused(bool value)
+        {
+            paused = value;
+            if (pausePanel != null) pausePanel.SetActive(value);
+            if (value && statusLabel != null) statusLabel.text = "Paused. The palace waits.";
+            else if (!value && statusLabel != null && engine != null && !engine.State.failed && !engine.State.completed)
+                statusLabel.text = definition.hintText;
+        }
+
+        void PlayFeedback(AudioClip clip)
+        {
+            if (sfxSource != null && clip != null) sfxSource.PlayOneShot(clip);
+        }
+
+        IEnumerator PresentTurn()
+        {
+            inputLocked = true;
+            if (turnPulseView != null) turnPulseView.gameObject.SetActive(true);
+            var elapsed = 0f;
+            while (elapsed < presentationDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                var phase = presentationDuration <= 0 ? 1 : elapsed / presentationDuration;
+                if (turnPulseView != null) turnPulseView.localScale = Vector3.one * Mathf.Lerp(0.75f, 1.35f, phase);
+                yield return null;
+            }
+            if (turnPulseView != null)
+            {
+                turnPulseView.localScale = Vector3.one;
+                turnPulseView.gameObject.SetActive(false);
+            }
+            inputLocked = false;
+        }
+
+        void RefreshPositionPool(RectTransform[] views, GridCoord[] positions)
+        {
+            for (var i = 0; i < views.Length; i++)
+            {
+                var active = i < positions.Length;
+                views[i].gameObject.SetActive(active);
+                if (active) Position(views[i], positions[i]);
+            }
+        }
+
+        string ObjectiveActions(LevelState state)
+        {
+            var done = Math.Min(state.lampRotations, definition.requiredLampRotations)
+                + Math.Min(state.mirrorRotations, definition.requiredMirrorRotations)
+                + Math.Min(state.boxPushes, definition.requiredBoxPushes)
+                + Math.Min(state.curtainToggles, definition.requiredCurtainToggles);
+            var total = definition.requiredLampRotations + definition.requiredMirrorRotations
+                + definition.requiredBoxPushes + definition.requiredCurtainToggles;
+            return $"{done}/{total}";
         }
 
         void Position(RectTransform view, GridCoord coord)

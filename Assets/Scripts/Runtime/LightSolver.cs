@@ -21,6 +21,20 @@ namespace ShadowTileEscape
                 Array.Clear(visited, 0, visited.Length);
                 Trace(state, source.position, source.direction, Math.Max(0, source.range));
             }
+            for (var guardIndex = 0; guardIndex < state.guards.Length; guardIndex++)
+            {
+                var guard = state.guards[guardIndex];
+                if (guard.lightRange <= 0) continue;
+                Array.Clear(visited, 0, visited.Length);
+                Trace(state, guard.position, guard.facing, guard.lightRange);
+            }
+            for (var movingIndex = 0; movingIndex < state.movingLights.Length; movingIndex++)
+            {
+                var moving = state.movingLights[movingIndex];
+                if (!moving.active || moving.path.Length == 0) continue;
+                Array.Clear(visited, 0, visited.Length);
+                Trace(state, moving.Position, moving.Direction, Math.Max(0, moving.range));
+            }
             return litCount;
         }
 

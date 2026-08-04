@@ -71,5 +71,19 @@ namespace ShadowTileEscape.Tests
             Assert.That(loaded.unlockedLevel, Is.EqualTo(1));
             Assert.That(loaded.levels, Has.Length.EqualTo(15));
         }
+
+        [Test]
+        public void NewerSaveVersionIsNeverOverwritten()
+        {
+            Directory.CreateDirectory(directory);
+            var path = Path.Combine(directory, "shadow-tile-escape.json");
+            var future = new SaveData { version = SaveGameService.CurrentVersion + 1 };
+            File.WriteAllText(path, UnityEngine.JsonUtility.ToJson(future));
+            var original = File.ReadAllText(path);
+            service.Load();
+            Assert.That(service.HasUnsupportedSave, Is.True);
+            Assert.Throws<InvalidOperationException>(() => service.Save(new SaveData()));
+            Assert.That(File.ReadAllText(path), Is.EqualTo(original));
+        }
     }
 }

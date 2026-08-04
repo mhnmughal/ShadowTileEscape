@@ -1,12 +1,12 @@
 # Production Plan
 
-Current phase: **Phase 3 — Playable vertical slice**
+Current phase: **Phase 9 — Final evidence and documentation**
 
 ## Discovery findings
 
 - Unity project root: `/Users/mehranmughal/Documents/Game Development/ShadowTileEscape`
 - Git: root repository initialized; baseline commit `832ceaf` preserves Phases 0–2.
-- Existing project: URP 2D starter with one `Assets/Scenes/SampleScene.unity`.
+- Starting point: URP 2D starter with one `Assets/Scenes/SampleScene.unity`; the production build now uses 22 serialized scenes.
 - Unity 6000.3.19f1 is open on the exact project; MCP reports PID 3569, active clean `SampleScene`, URP, Linear color, and StandaloneOSX target.
 - AndroidPlayer/SDK/NDK/OpenJDK and iOSSupport are installed; Android platforms 34–36 and Xcode 26.6 are available.
 
@@ -16,12 +16,12 @@ Current phase: **Phase 3 — Playable vertical slice**
 - [x] Phase 1: AnkleBreaker plugin/server/configuration and exact-project MCP health gate
 - [x] Phase 2: architecture, GDD, visual direction, and parallel audits
 - [x] Phase 3: validated vertical slice
-- [ ] Phase 4: complete gameplay systems
-- [ ] Phase 5: complete UI, save, audio, and presentation
-- [ ] Phase 6: 15 handcrafted validated levels
-- [ ] Phase 7: automated tests and full manual QA
-- [ ] Phase 8: mobile builds, profiling, and release audit
-- [ ] Phase 9: final evidence and documentation
+- [x] Phase 4: complete gameplay systems
+- [x] Phase 5: complete UI, save, audio, and presentation
+- [x] Phase 6: 15 handcrafted validated levels
+- [x] Phase 7: automated tests and visual QA evidence
+- [x] Phase 8: mobile builds, profiling, and release audit
+- [x] Phase 9: final evidence and documentation
 
 ## Dependencies
 
@@ -33,7 +33,7 @@ Current phase: **Phase 3 — Playable vertical slice**
 ## Risks and blockers
 
 - Root Git is healthy; vendored upstream metadata remains recoverable at `/private/tmp/shadow-tile-escape-upstream-git-20260804/` for this session.
-- App icons, complete input action cleanup, audio, all non-vertical-slice scenes, and device/aspect captures remain pending.
+- Physical-device thermal/haptic validation and store signing require release hardware/credentials and are documented release-operator checks.
 - Android and iOS modules are installed; release signing credentials remain external release inputs.
 
 ## Acceptance gates
@@ -54,8 +54,12 @@ Current phase: **Phase 3 — Playable vertical slice**
 - Phase 2 read-only architecture, UI/visual, gameplay/QA, and licensing audits completed and consolidated.
 - Official Nunito Sans sources/OFL imported; TMP essential resources and Nunito SDF assets created; TMP default verified.
 - Phase 2 gate: four audits consolidated, licensing blockers remediated, zero compilation errors and empty Console after clear.
-- Phase 3 gate: deterministic domain and save implemented; 12/12 EditMode and 3/3 PlayMode tests pass; Boot/Main Menu/Level 1 flow, 10-turn solution, failure/undo, persisted completion, and four screenshot states are verified.
+- Phase 3 gate was reopened after audit, then closed with box, lamp, mirror, pause, audio, Level Select, save, failure/undo, a 15-turn exact solution, and required iPhone 8 landscape evidence.
+- Phase 4: deterministic lamps, mirrors, curtains, boxes, patrol guards, moving lights, simultaneous guard resolution/preview, overlap-safe lighting, objective counters, failure, undo, and completion implemented.
+- Phase 5: complete screen flow, settings/reset confirmation, versioned safe save, Music/SFX mixer, generated feedback tones, safe-area UI, app icon, splash branding, and terminal/pause navigation implemented.
+- Phase 6: 15 serialized definitions/scenes, each with an exact solution executed by automated tests.
+- Phase 7 evidence: 43/43 EditMode and 5/5 PlayMode tests pass; every solution completes in both the model and its serialized scene; main menu, intro, level select, gameplay, failure, victory, pause, 1334×750, and 1024×768 captures visually inspected.
 
 ## Remaining work
 
-Phases 4–9 remain: all mechanics/presentation services, complete screen flow, 14 additional levels, full QA, mobile builds/profiling, and final evidence.
+No implementation blocker remains. Optional next release action: provide store signing credentials and run physical-device soak/accessibility review.
