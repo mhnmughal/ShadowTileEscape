@@ -1,10 +1,10 @@
 # Third-Party Notices
 
-Status: initial inventory; no new third-party content has been imported yet.
+Status: final project inventory for the current serialized release candidate.
 
 ## Unity packages and template content
 
-This project currently contains Unity-provided 2D/URP template configuration and packages. Exact package versions and applicable Unity terms will be recorded after Phase 0 package inspection.
+This project contains Unity-provided 2D/URP configuration and locked registry/built-in packages, including Unity Engine/URP 17.3.0, Input System 1.19.0, uGUI/TextMeshPro 2.0.0, Test Framework 1.6.0, Performance Testing, and Mathematics plus their transitive dependencies. Exact resolved versions are recorded in `Packages/packages-lock.json`; applicable Unity package and third-party notices remain with those packages.
 
 ## Nunito Sans
 
@@ -34,4 +34,6 @@ The development-only Node server remains outside `Assets` and is excluded from p
 
 ## Art and audio
 
-No external game art or audio has been added. Planned art, icon, effects, and audio will be original project-created content unless a commercially usable source is documented here first.
+The shipped game uses no paid or copied game-art, icon, UI-kit, or audio pack. Palace scenery, UI geometry/icons, rounded UI sprites, level presentation, and visual effects are original project-authored/editor-generated content. The app icon was generated for this project with OpenAI ImageGen; its final prompt and provenance are recorded in `Docs/AssetRegister.md`.
+
+Ambient music and interface/gameplay cues under `Assets/Audio/Generated` are original editor-generated waveforms authored by the project builder. `Assets/Audio/ShadowTileEscape.mixer` is project-owned Unity configuration. Screenshot evidence under `Assets/Screenshots` is generated from this project and is not player-facing source art.

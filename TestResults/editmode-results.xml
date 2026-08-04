@@ -1,109 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="43" result="Passed" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.0573573">
-  <test-suite type="TestSuite" id="1000" name="Shadow Tile Escape" fullname="Shadow Tile Escape" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.057357" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="43" result="Passed" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.0758507">
+  <test-suite type="TestSuite" id="1000" name="Shadow Tile Escape" fullname="Shadow Tile Escape" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.075851" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="EditMode" />
     </properties>
-    <test-suite type="Assembly" id="1050" name="ShadowTileEscape.EditModeTests.dll" fullname="/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Library/ScriptAssemblies/ShadowTileEscape.EditModeTests.dll" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.049225" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1050" name="ShadowTileEscape.EditModeTests.dll" fullname="/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Library/ScriptAssemblies/ShadowTileEscape.EditModeTests.dll" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.058514" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
         <property name="_PID" value="10880" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="EditMode" />
         <property name="EditorOnly" value="True" />
       </properties>
-      <test-suite type="TestSuite" id="1051" name="ShadowTileEscape" fullname="ShadowTileEscape" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.048664" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1051" name="ShadowTileEscape" fullname="ShadowTileEscape" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.057248" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1052" name="Tests" fullname="ShadowTileEscape.Tests" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.048238" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1052" name="Tests" fullname="ShadowTileEscape.Tests" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.056827" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestFixture" id="1002" name="LevelSolutionTests" fullname="ShadowTileEscape.Tests.LevelSolutionTests" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.028615" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1002" name="LevelSolutionTests" fullname="ShadowTileEscape.Tests.LevelSolutionTests" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.034859" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="ParameterizedMethod" id="1018" name="SerializedSolutionCompletesLevel" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.026189" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1018" name="SerializedSolutionCompletesLevel" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.032498" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1003" name="SerializedSolutionCompletesLevel(1)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(1)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="2086304553" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.014073" asserts="0">
+              <test-case id="1003" name="SerializedSolutionCompletesLevel(1)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(1)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1611726278" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.021010" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1004" name="SerializedSolutionCompletesLevel(2)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(2)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1254223172" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000518" asserts="0">
+              <test-case id="1004" name="SerializedSolutionCompletesLevel(2)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(2)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="950876747" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000909" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1005" name="SerializedSolutionCompletesLevel(3)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(3)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="104546951" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000363" asserts="0">
+              <test-case id="1005" name="SerializedSolutionCompletesLevel(3)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(3)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="873915797" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000379" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1006" name="SerializedSolutionCompletesLevel(4)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(4)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1481496196" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000978" asserts="0">
+              <test-case id="1006" name="SerializedSolutionCompletesLevel(4)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(4)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1848608876" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000333" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1007" name="SerializedSolutionCompletesLevel(5)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(5)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1602483228" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000282" asserts="0">
+              <test-case id="1007" name="SerializedSolutionCompletesLevel(5)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(5)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1210610633" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000369" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1008" name="SerializedSolutionCompletesLevel(6)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(6)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1848640113" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000230" asserts="0">
+              <test-case id="1008" name="SerializedSolutionCompletesLevel(6)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(6)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="422091490" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000250" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1009" name="SerializedSolutionCompletesLevel(7)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(7)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="710566706" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000240" asserts="0">
+              <test-case id="1009" name="SerializedSolutionCompletesLevel(7)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(7)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="492909214" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000251" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1010" name="SerializedSolutionCompletesLevel(8)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(8)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1025286356" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000238" asserts="0">
+              <test-case id="1010" name="SerializedSolutionCompletesLevel(8)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(8)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="2083620113" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000232" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1011" name="SerializedSolutionCompletesLevel(9)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(9)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1764783481" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000258" asserts="0">
+              <test-case id="1011" name="SerializedSolutionCompletesLevel(9)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(9)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1121296877" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000242" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1012" name="SerializedSolutionCompletesLevel(10)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(10)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="887481066" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000575" asserts="0">
+              <test-case id="1012" name="SerializedSolutionCompletesLevel(10)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(10)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1270710410" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000492" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1013" name="SerializedSolutionCompletesLevel(11)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(11)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1716727468" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000234" asserts="0">
+              <test-case id="1013" name="SerializedSolutionCompletesLevel(11)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(11)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="573287520" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000241" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1014" name="SerializedSolutionCompletesLevel(12)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(12)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="518852771" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000464" asserts="0">
+              <test-case id="1014" name="SerializedSolutionCompletesLevel(12)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(12)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="5504906" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000495" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1015" name="SerializedSolutionCompletesLevel(13)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(13)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="400543955" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000370" asserts="0">
+              <test-case id="1015" name="SerializedSolutionCompletesLevel(13)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(13)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="282197794" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000250" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1016" name="SerializedSolutionCompletesLevel(14)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(14)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1237751719" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000776" asserts="0">
+              <test-case id="1016" name="SerializedSolutionCompletesLevel(14)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(14)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="582638657" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000194" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1017" name="SerializedSolutionCompletesLevel(15)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(15)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="830046161" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000302" asserts="0">
+              <test-case id="1017" name="SerializedSolutionCompletesLevel(15)" fullname="ShadowTileEscape.Tests.LevelSolutionTests.SerializedSolutionCompletesLevel(15)" methodname="SerializedSolutionCompletesLevel" classname="ShadowTileEscape.Tests.LevelSolutionTests" runstate="Runnable" seed="1777800125" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000281" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
@@ -111,177 +111,177 @@
               </test-case>
             </test-suite>
           </test-suite>
-          <test-suite type="TestFixture" id="1019" name="SaveGameServiceTests" fullname="ShadowTileEscape.Tests.SaveGameServiceTests" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.009857" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1019" name="SaveGameServiceTests" fullname="ShadowTileEscape.Tests.SaveGameServiceTests" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.013978" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1021" name="CompletionNeverRegressesAndCapsUnlockAtFifteen" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.CompletionNeverRegressesAndCapsUnlockAtFifteen" methodname="CompletionNeverRegressesAndCapsUnlockAtFifteen" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1492870422" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.001432" asserts="0">
+            <test-case id="1021" name="CompletionNeverRegressesAndCapsUnlockAtFifteen" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.CompletionNeverRegressesAndCapsUnlockAtFifteen" methodname="CompletionNeverRegressesAndCapsUnlockAtFifteen" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="136832810" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.001476" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1022" name="CorruptPrimaryFallsBackToLastKnownGoodBackup" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.CorruptPrimaryFallsBackToLastKnownGoodBackup" methodname="CorruptPrimaryFallsBackToLastKnownGoodBackup" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1054729496" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.003160" asserts="0">
+            <test-case id="1022" name="CorruptPrimaryFallsBackToLastKnownGoodBackup" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.CorruptPrimaryFallsBackToLastKnownGoodBackup" methodname="CorruptPrimaryFallsBackToLastKnownGoodBackup" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1027624581" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.001883" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1023" name="DefaultsAreReturnedWhenNoValidSaveExists" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.DefaultsAreReturnedWhenNoValidSaveExists" methodname="DefaultsAreReturnedWhenNoValidSaveExists" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1751988548" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000570" asserts="0">
+            <test-case id="1023" name="DefaultsAreReturnedWhenNoValidSaveExists" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.DefaultsAreReturnedWhenNoValidSaveExists" methodname="DefaultsAreReturnedWhenNoValidSaveExists" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="916984153" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000529" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1024" name="NewerSaveVersionIsNeverOverwritten" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.NewerSaveVersionIsNeverOverwritten" methodname="NewerSaveVersionIsNeverOverwritten" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="746584207" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.001099" asserts="0">
+            <test-case id="1024" name="NewerSaveVersionIsNeverOverwritten" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.NewerSaveVersionIsNeverOverwritten" methodname="NewerSaveVersionIsNeverOverwritten" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="2074541850" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.001121" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1020" name="RoundTripPreservesProgressAndSettings" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.RoundTripPreservesProgressAndSettings" methodname="RoundTripPreservesProgressAndSettings" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1576261177" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000714" asserts="0">
+            <test-case id="1020" name="RoundTripPreservesProgressAndSettings" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.RoundTripPreservesProgressAndSettings" methodname="RoundTripPreservesProgressAndSettings" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="769504915" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000639" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
           </test-suite>
-          <test-suite type="TestFixture" id="1025" name="TurnEngineTests" fullname="ShadowTileEscape.Tests.TurnEngineTests" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" testcasecount="23" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.008881" total="23" passed="23" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1025" name="TurnEngineTests" fullname="ShadowTileEscape.Tests.TurnEngineTests" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" testcasecount="23" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.007016" total="23" passed="23" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1045" name="BoxInteractionPushesBlockerAndChangesLight" fullname="ShadowTileEscape.Tests.TurnEngineTests.BoxInteractionPushesBlockerAndChangesLight" methodname="BoxInteractionPushesBlockerAndChangesLight" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1658328746" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.001151" asserts="0">
+            <test-case id="1045" name="BoxInteractionPushesBlockerAndChangesLight" fullname="ShadowTileEscape.Tests.TurnEngineTests.BoxInteractionPushesBlockerAndChangesLight" methodname="BoxInteractionPushesBlockerAndChangesLight" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1565022303" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.001102" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1044" name="CurtainInteractionOpensLightPath" fullname="ShadowTileEscape.Tests.TurnEngineTests.CurtainInteractionOpensLightPath" methodname="CurtainInteractionOpensLightPath" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1308982371" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000245" asserts="0">
+            <test-case id="1044" name="CurtainInteractionOpensLightPath" fullname="ShadowTileEscape.Tests.TurnEngineTests.CurtainInteractionOpensLightPath" methodname="CurtainInteractionOpensLightPath" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1270482427" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000238" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1043" name="ExitRequiresConfiguredShardCount" fullname="ShadowTileEscape.Tests.TurnEngineTests.ExitRequiresConfiguredShardCount" methodname="ExitRequiresConfiguredShardCount" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="575704486" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000180" asserts="0">
+            <test-case id="1043" name="ExitRequiresConfiguredShardCount" fullname="ShadowTileEscape.Tests.TurnEngineTests.ExitRequiresConfiguredShardCount" methodname="ExitRequiresConfiguredShardCount" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1513162249" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000180" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1039" name="FailedLightTurnCanBeUndone" fullname="ShadowTileEscape.Tests.TurnEngineTests.FailedLightTurnCanBeUndone" methodname="FailedLightTurnCanBeUndone" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1819753833" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000209" asserts="0">
+            <test-case id="1039" name="FailedLightTurnCanBeUndone" fullname="ShadowTileEscape.Tests.TurnEngineTests.FailedLightTurnCanBeUndone" methodname="FailedLightTurnCanBeUndone" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2107931574" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000217" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1047" name="GuardianLanternUsesResolvedFacingForFinalSafety" fullname="ShadowTileEscape.Tests.TurnEngineTests.GuardianLanternUsesResolvedFacingForFinalSafety" methodname="GuardianLanternUsesResolvedFacingForFinalSafety" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2127105532" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000241" asserts="0">
+            <test-case id="1047" name="GuardianLanternUsesResolvedFacingForFinalSafety" fullname="ShadowTileEscape.Tests.TurnEngineTests.GuardianLanternUsesResolvedFacingForFinalSafety" methodname="GuardianLanternUsesResolvedFacingForFinalSafety" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="970696995" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000256" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1048" name="GuardPreviewUsesSameResolverAsExecution" fullname="ShadowTileEscape.Tests.TurnEngineTests.GuardPreviewUsesSameResolverAsExecution" methodname="GuardPreviewUsesSameResolverAsExecution" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="597812015" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000140" asserts="0">
+            <test-case id="1048" name="GuardPreviewUsesSameResolverAsExecution" fullname="ShadowTileEscape.Tests.TurnEngineTests.GuardPreviewUsesSameResolverAsExecution" methodname="GuardPreviewUsesSameResolverAsExecution" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="621319373" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000145" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1049" name="HeadOnGuardSwapMakesBothWait" fullname="ShadowTileEscape.Tests.TurnEngineTests.HeadOnGuardSwapMakesBothWait" methodname="HeadOnGuardSwapMakesBothWait" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1244993338" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000209" asserts="0">
+            <test-case id="1049" name="HeadOnGuardSwapMakesBothWait" fullname="ShadowTileEscape.Tests.TurnEngineTests.HeadOnGuardSwapMakesBothWait" methodname="HeadOnGuardSwapMakesBothWait" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2003675339" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000202" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1038" name="InvalidMoveDoesNotMutateOrCreateHistory" fullname="ShadowTileEscape.Tests.TurnEngineTests.InvalidMoveDoesNotMutateOrCreateHistory" methodname="InvalidMoveDoesNotMutateOrCreateHistory" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="80225016" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000117" asserts="0">
+            <test-case id="1038" name="InvalidMoveDoesNotMutateOrCreateHistory" fullname="ShadowTileEscape.Tests.TurnEngineTests.InvalidMoveDoesNotMutateOrCreateHistory" methodname="InvalidMoveDoesNotMutateOrCreateHistory" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2086681856" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000127" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1040" name="LampInteractionRotatesClockwiseAndCountsTurn" fullname="ShadowTileEscape.Tests.TurnEngineTests.LampInteractionRotatesClockwiseAndCountsTurn" methodname="LampInteractionRotatesClockwiseAndCountsTurn" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1728577009" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000138" asserts="0">
+            <test-case id="1040" name="LampInteractionRotatesClockwiseAndCountsTurn" fullname="ShadowTileEscape.Tests.TurnEngineTests.LampInteractionRotatesClockwiseAndCountsTurn" methodname="LampInteractionRotatesClockwiseAndCountsTurn" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1868043894" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000128" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1026" name="LightIncludesTraversedCellsButNotSource" fullname="ShadowTileEscape.Tests.TurnEngineTests.LightIncludesTraversedCellsButNotSource" methodname="LightIncludesTraversedCellsButNotSource" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1345499876" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000156" asserts="0">
+            <test-case id="1026" name="LightIncludesTraversedCellsButNotSource" fullname="ShadowTileEscape.Tests.TurnEngineTests.LightIncludesTraversedCellsButNotSource" methodname="LightIncludesTraversedCellsButNotSource" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="365956894" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000160" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-suite type="ParameterizedMethod" id="1037" name="MirrorReflectionCoversEveryIncomingDirection" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.002162" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="ParameterizedMethod" id="1037" name="MirrorReflectionCoversEveryIncomingDirection" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.001504" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1029" name="MirrorReflectionCoversEveryIncomingDirection(Slash,East,North)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,East,North)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="195002958" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000267" asserts="0">
+              <test-case id="1029" name="MirrorReflectionCoversEveryIncomingDirection(Slash,East,North)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,East,North)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="859760786" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000228" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1030" name="MirrorReflectionCoversEveryIncomingDirection(Slash,North,East)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,North,East)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="3284383" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000065" asserts="0">
+              <test-case id="1030" name="MirrorReflectionCoversEveryIncomingDirection(Slash,North,East)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,North,East)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="941632648" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000070" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1031" name="MirrorReflectionCoversEveryIncomingDirection(Slash,West,South)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,West,South)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="969914342" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000063" asserts="0">
+              <test-case id="1031" name="MirrorReflectionCoversEveryIncomingDirection(Slash,West,South)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,West,South)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1099380031" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000062" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1032" name="MirrorReflectionCoversEveryIncomingDirection(Slash,South,West)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,South,West)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2104630844" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000063" asserts="0">
+              <test-case id="1032" name="MirrorReflectionCoversEveryIncomingDirection(Slash,South,West)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Slash,South,West)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2141894072" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000069" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1033" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,East,South)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,East,South)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1494084910" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000064" asserts="0">
+              <test-case id="1033" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,East,South)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,East,South)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="197453889" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000063" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1034" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,South,East)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,South,East)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1044047396" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000062" asserts="0">
+              <test-case id="1034" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,South,East)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,South,East)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="871065867" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000063" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1035" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,West,North)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,West,North)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="272765728" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000064" asserts="0">
+              <test-case id="1035" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,West,North)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,West,North)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="154105059" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000062" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
-              <test-case id="1036" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,North,West)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,North,West)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1203133400" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000065" asserts="0">
+              <test-case id="1036" name="MirrorReflectionCoversEveryIncomingDirection(Backslash,North,West)" fullname="ShadowTileEscape.Tests.TurnEngineTests.MirrorReflectionCoversEveryIncomingDirection(Backslash,North,West)" methodname="MirrorReflectionCoversEveryIncomingDirection" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="272457601" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000066" asserts="0">
                 <properties>
                   <property name="retryIteration" value="0" />
                   <property name="repeatIteration" value="0" />
                 </properties>
               </test-case>
             </test-suite>
-            <test-case id="1046" name="MovingMoonlightAdvancesBeforeFinalSafetyCheck" fullname="ShadowTileEscape.Tests.TurnEngineTests.MovingMoonlightAdvancesBeforeFinalSafetyCheck" methodname="MovingMoonlightAdvancesBeforeFinalSafetyCheck" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2126112665" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000197" asserts="0">
+            <test-case id="1046" name="MovingMoonlightAdvancesBeforeFinalSafetyCheck" fullname="ShadowTileEscape.Tests.TurnEngineTests.MovingMoonlightAdvancesBeforeFinalSafetyCheck" methodname="MovingMoonlightAdvancesBeforeFinalSafetyCheck" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="371266189" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000184" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1027" name="OpaqueBoxStopsBeforeItsCell" fullname="ShadowTileEscape.Tests.TurnEngineTests.OpaqueBoxStopsBeforeItsCell" methodname="OpaqueBoxStopsBeforeItsCell" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="2082878776" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000136" asserts="0">
+            <test-case id="1027" name="OpaqueBoxStopsBeforeItsCell" fullname="ShadowTileEscape.Tests.TurnEngineTests.OpaqueBoxStopsBeforeItsCell" methodname="OpaqueBoxStopsBeforeItsCell" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1484120752" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000136" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1041" name="SimultaneousGuardsWaitOnContestedDestination" fullname="ShadowTileEscape.Tests.TurnEngineTests.SimultaneousGuardsWaitOnContestedDestination" methodname="SimultaneousGuardsWaitOnContestedDestination" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1405913378" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000212" asserts="0">
+            <test-case id="1041" name="SimultaneousGuardsWaitOnContestedDestination" fullname="ShadowTileEscape.Tests.TurnEngineTests.SimultaneousGuardsWaitOnContestedDestination" methodname="SimultaneousGuardsWaitOnContestedDestination" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1265679541" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000197" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1028" name="SlashMirrorReflectsEastToNorth" fullname="ShadowTileEscape.Tests.TurnEngineTests.SlashMirrorReflectsEastToNorth" methodname="SlashMirrorReflectsEastToNorth" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="916494592" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000149" asserts="0">
+            <test-case id="1028" name="SlashMirrorReflectsEastToNorth" fullname="ShadowTileEscape.Tests.TurnEngineTests.SlashMirrorReflectsEastToNorth" methodname="SlashMirrorReflectsEastToNorth" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1279715644" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000150" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1042" name="ThreeGuardsAllWaitOnOneContestedDestination" fullname="ShadowTileEscape.Tests.TurnEngineTests.ThreeGuardsAllWaitOnOneContestedDestination" methodname="ThreeGuardsAllWaitOnOneContestedDestination" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="695318784" result="Passed" start-time="2026-08-04 11:30:58Z" end-time="2026-08-04 11:30:58Z" duration="0.000259" asserts="0">
+            <test-case id="1042" name="ThreeGuardsAllWaitOnOneContestedDestination" fullname="ShadowTileEscape.Tests.TurnEngineTests.ThreeGuardsAllWaitOnOneContestedDestination" methodname="ThreeGuardsAllWaitOnOneContestedDestination" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1873025708" result="Passed" start-time="2026-08-04 13:10:48Z" end-time="2026-08-04 13:10:48Z" duration="0.000265" asserts="0">
               <properties>
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />

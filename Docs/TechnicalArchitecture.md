@@ -1,6 +1,6 @@
 # Technical Architecture
 
-Status: Full deterministic runtime and serialized 22-scene build implemented; platform build/profile verification remains.
+Status: Full deterministic runtime, serialized 22-scene build, commercial UI pass, tests, and mobile build verification complete.
 
 ## Verified baseline
 
@@ -29,7 +29,7 @@ Every level scene contains all grid cells, actor/interactable pools, light overl
 
 An Editor-only scene baker may place common hierarchy/prefab instances before Play Mode and save them as normal serialized scenes. It is never included in player builds and never generates gameplay content at runtime.
 
-Small screen controllers use serialized references and direct scene navigation. Save services are lightweight path-backed objects, not GameObjects. No normal gameplay dependency path uses scene-wide searches or runtime content construction.
+Small screen controllers use serialized references and direct scene navigation. `MainMenuController` owns dynamic Continue/New Game state, `SettingsController` owns mixer-backed settings and nested confirmations/Credits, `LevelSelectController` and `LevelButtonController` present progress, and `StaticScreenController` owns intro/tutorial/completion flow. Save services are lightweight path-backed objects, not GameObjects. No normal gameplay dependency path uses scene-wide searches or runtime content construction.
 
 ## Deterministic domain
 
@@ -71,6 +71,10 @@ CanvasScaler uses 1920×1080. `FullBleedRoot` owns background/dimmers; `SafeArea
 
 TMP essential resources are installed. The official Nunito Sans variable and italic sources and SDF assets live under `Assets/Fonts/NunitoSans`; TMP's project default is Nunito Sans.
 
+The editor baker creates all required panels, buttons, vector-like geometry icons, mobile controls, particles, and scene references before Play Mode. Shared UI sprites under `Assets/Art/UI` are original editor-generated rounded raster shapes. Runtime presentation is limited to activation, transforms, colors, text, CanvasGroup state, and pre-created ambient/entrance/button motion. `UiEntranceMotion`, `UiButtonFeedback`, and `UiAmbientMotion` respect reduced-flashing state and never construct content.
+
+`ShadowTileEscape.mixer` exposes `MusicVolume` and `SFXVolume`. Saved linear slider values are converted to logarithmic decibels and applied on scene initialization and live adjustment. Progress reset preserves settings; tutorial reset changes only tutorial state; New Game preserves settings while clearing progression.
+
 ## Performance
 
 - No continuous grid/light solve, open-ended pathfinding, or avoidable idle `Update`.
@@ -83,7 +87,7 @@ TMP essential resources are installed. The official Nunito Sans variable and ita
 
 Landscape left/right, safe-area behavior, bundle ID `com.moonlitloom.shadowtileescape`, 22-scene order, 60 FPS target, crash-report API off, Android IL2CPP/ARM64, and iOS minimum 15 are serialized. A 1024px icon and branded splash are configured. Signing team and release keystore remain release-only external inputs.
 
-Audio uses one serialized `ShadowTileEscape.mixer` with Master/Music/SFX groups. All ambience routes to Music and gameplay feedback routes to SFX; saved sliders scale live sources.
+Audio uses one serialized `ShadowTileEscape.mixer` with Master/Music/SFX groups and exposed `MusicVolume`/`SFXVolume` parameters. All ambience routes to Music and gameplay feedback routes to SFX; saved sliders update the mixer live and persist through the central save.
 
 ## Prohibited production runtime patterns
 

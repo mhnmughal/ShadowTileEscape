@@ -12,6 +12,8 @@ Status: Full-game inventory current.
 | AnkleBreaker Unity MCP plugin v2.39.5 | AnkleBreaker Studio GitHub, commit `9032874` | AnkleBreaker Open License v1.0 | Internal/commercial project use permitted; attribution required | `Packages/com.anklebreaker.unity-mcp` | INSTALLED |
 | AnkleBreaker Unity MCP server v2.35.6 | AnkleBreaker Studio GitHub, commit `826af5c` | AnkleBreaker Open License v1.0 | Internal/commercial project use permitted; attribution required | `Tools/unity-mcp-server` | INSTALLED |
 | Full-game UI/game art | Original serialized uGUI geometry/colors | Project-owned | Yes | `Assets/Scenes/**` | CREATED |
+| Rounded UI panel/button/circle sprites | Original editor-generated raster shapes | Project-owned | Yes | `Assets/Art/UI/` | CREATED/IMPORTED |
+| UI iconography and palace decoration | Original serialized uGUI geometry authored by the scene baker | Project-owned | Yes | `Assets/Scenes/**` | CREATED |
 | App icon | OpenAI built-in image generation; final prompt recorded below | Project-owned generated content subject to applicable OpenAI terms | Yes | `Assets/Art/AppIcon/ShadowTileEscape_AppIcon.png` | CREATED/IMPORTED/ASSIGNED |
 | Feedback tones/ambience | Editor-generated sine tones authored by project builder | Project-owned | Yes | `Assets/Audio/Generated/*.wav` | CREATED |
 | Audio mixer | Unity editor-generated mixer with Music/SFX groups | Project-owned configuration | Yes | `Assets/Audio/ShadowTileEscape.mixer` | CREATED |
@@ -21,6 +23,8 @@ Every added external or generated asset will be registered with source, license,
 Phase 1 evidence screenshot is project-generated at `Assets/Screenshots/MCP_Phase1_Validation.png`.
 
 Phase 3 project-generated evidence: `VerticalSlice_MainMenu.png`, `VerticalSlice_Level01_Initial.png`, `VerticalSlice_Level01_Failure.png`, and `VerticalSlice_Level01_Completed.png` under `Assets/Screenshots/`.
+
+Final commercial UI evidence is project-generated under `Assets/Screenshots/UIRedesign_*.png`. It includes the 1334×750, 1920×1080, 2436×1125, 2340×1080, 2532×1170, 2796×1290, and 2732×2048 Main Menu matrix plus Boot, Settings, Credits, Intro, How to Play, Level Select, gameplay/mobile controls, pause, failure, victory, and Completion states. Evidence PNGs import as ordinary textures and are not referenced by player scenes.
 
 Nunito SHA-256: upright `f934d7142fb4784bf828da485b7dcbd90c0c80d514e9d49a5da0ed3a1ae2491d`; italic `d9d5db18f3c11221a4fbb553cbc709391c1179964c7eaa4466ef43c78aa4492f`; OFL `efbb0c9e864cef973982d9a17567e6be5c3d1759695574586f3f18c7ecca064b`.
 

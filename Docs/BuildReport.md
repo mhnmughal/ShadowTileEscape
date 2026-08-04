@@ -4,16 +4,17 @@ Status: Android release player, iOS Unity export, and unsigned iOS device build 
 
 | Platform | Configuration | Result | Unity errors/warnings | Output |
 |---|---|---|---|---|
-| Android | Release, IL2CPP, ARM64, adaptive icon, landscape | PASS — 22.30 s final cached build | 0 / 0 | `Builds/Android/ShadowTileEscape.apk` |
-| iOS Unity export | Release, ARM64 Xcode project, iOS 15 minimum | PASS — 43.66 s | 0 / 0 | `Builds/iOS/Unity-iPhone.xcodeproj` |
+| Android | Release, IL2CPP, ARM64, adaptive icon, landscape | PASS — 24.01 s final cached build | 0 / 0 | `Builds/Android/ShadowTileEscape.apk` |
+| iOS Unity export | Release, ARM64 Xcode project, iOS 15 minimum | PASS — 45.15 s | 0 / 0 | `Builds/iOS/Unity-iPhone.xcodeproj` |
 | iOS Xcode compile | Release, iphoneos 26.5, signing disabled | PASS — `** BUILD SUCCEEDED **` | Unity/Xcode generated deprecation/linker warnings only | `Builds/iOSDerivedData/Build/Products/Release-iphoneos/ShadowTileEscape.app` |
 
 ## Artifact checks
 
-- Android APK: 37 MB; SHA-256 `5772c92ce7ca01d9d31afd24e4b684cf0298d35164260a551d1dce705351c923`.
+- Android APK: 39,259,482 bytes (about 37.4 MiB); SHA-256 `f29a2ca651d8f254c1af8c69e5a0dbc9fd8052e805228b536fbd6fd1f5f08af5`.
 - iOS export: about 1.0 GB across 3,112 source/project files; project SHA-256 `79d3e35f74a016f6c68815635e4c88fd5630c0fd38cc32d771ab71bc8c704d58`.
 - iOS project contains bundle ID `com.moonlitloom.shadowtileescape` and `IPHONEOS_DEPLOYMENT_TARGET = 15.0`.
-- The first sandboxed `xcodebuild` attempt failed because Bee could not bind its local IPC socket. The identical approved unsandboxed command passed; this was an environment restriction, not a source/build defect.
+- The refreshed unsigned native compile used Xcode 26.6 / iphoneos 26.5 with signing disabled and ended `** BUILD SUCCEEDED **`.
+- An initial Android UI-regression build reported five stale Sprite-rectangle warnings on overwritten QA screenshots. Those evidence assets were changed to ordinary Texture importers; the repeated final Android build and iOS export both completed with 0 errors/0 warnings.
 
 ## Runtime profile
 

@@ -56,3 +56,15 @@
 - Profile: Level 1 Play Mode measured 7 draws, 465 triangles, 16.512–16.927 ms frames (59.1–60.6 FPS), and 0 B sampled GC; analyzer suggestions: none.
 - Final regression: compilation 0 errors; EditMode 43/43 PASS; PlayMode 5/5 PASS; 22 enabled build scenes with no missing assets; missing-reference scan 0 scene/0 assets; Console clear confirmed.
 - External release inputs: Apple/Android store signing credentials and physical-device thermal/haptic soak only.
+
+## 2026-08-04 — Commercial UI redesign and regression gate
+
+- Work completed: rebuilt Boot, Main Menu, Intro, How to Play, Level Select, all 15 gameplay HUDs, pause/hint/failure/victory states, Settings, Credits & Licenses, and Completion with a single moonlit-palace design system. Removed Credits from Main Menu and relocated it to Settings and Completion.
+- Design system: exact navy/indigo/palace/cyan/gold/violet/ivory/orange tokens; original rounded panel/button/circle sprites; Nunito Sans hierarchy; serialized geometry icons; cyan focus rails; custom button states; safe-area-aware full-bleed/safe roots; restrained entrance, button, and ambient motion with reduced-flashing support.
+- Functionality: exposed Music/SFX mixer parameters, live/persistent sliders, haptics, reduced flashing, tutorial reset, confirmed progress reset preserving settings, dynamic Continue/New Game state, chapter/level metadata, persistent objectives, hints, nested pause settings, and aggregate completion totals.
+- Tests run: final compilation PASS with 0 errors/0 warnings; Edit Mode 43/43 PASS; Play Mode 10/10 PASS; missing-reference scans 0 scene/0 assets; forbidden-runtime-construction/search audit returned no matches.
+- Visual evidence: final 1334×750, 1920×1080, 2436×1125, 2340×1080, 2532×1170, 2796×1290, and 2732×2048 Main Menu captures plus Settings, Credits, Intro, How to Play, Level Select, gameplay/mobile controls, pause, failure, victory, and Completion. All were visually inspected.
+- Bugs fixed: tablet menu clipping, D-pad bottom-edge clipping, crowded gameplay action buttons, missing direction glyphs, credits overlap/scroll position, settings slider fill sizing, modal base-input leaks, hint direct-command leak, invalid last-played save bounds, and stale screenshot Sprite importer rectangles.
+- Final builds: Android release IL2CPP/ARM64 PASS in 24.01 s with 0/0; iOS Unity export PASS in 45.15 s with 0/0; refreshed unsigned iphoneos Xcode compile PASS with `** BUILD SUCCEEDED **`.
+- Commit hash: pending stable UI redesign checkpoint.
+- Remaining limitations: physical-device thermal/haptic and assistive-technology review plus store signing/archive submission require external hardware/credentials.

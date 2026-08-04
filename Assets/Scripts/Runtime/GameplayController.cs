@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -31,18 +32,26 @@ namespace ShadowTileEscape
 
         [Header("HUD")]
         [SerializeField] TMP_Text levelLabel;
+        [SerializeField] TMP_Text objectiveLabel;
         [SerializeField] TMP_Text moveLabel;
         [SerializeField] TMP_Text statusLabel;
         [SerializeField] TMP_Text lampDirectionLabel;
+        [SerializeField] TMP_Text failureTitleLabel;
+        [SerializeField] TMP_Text failureReasonLabel;
+        [SerializeField] TMP_Text victoryStatsLabel;
         [SerializeField] GameObject failurePanel;
         [SerializeField] GameObject victoryPanel;
         [SerializeField] GameObject pausePanel;
+        [SerializeField] GameObject hintPanel;
         [SerializeField] Button undoButton;
+        [SerializeField] CanvasGroup gameplayContent;
+        [SerializeField] SettingsController settingsController;
 
         [Header("Feedback")]
         [SerializeField] RectTransform turnPulseView;
         [SerializeField] AudioSource sfxSource;
         [SerializeField] AudioSource ambienceSource;
+        [SerializeField] AudioMixer audioMixer;
         [SerializeField] AudioClip moveClip;
         [SerializeField] AudioClip interactClip;
         [SerializeField] AudioClip undoClip;
@@ -57,6 +66,8 @@ namespace ShadowTileEscape
         bool completionSaved;
         bool paused;
         bool inputLocked;
+        bool hapticsEnabled;
+        bool reducedFlashing;
 
         public LevelDefinition Definition
         {
@@ -75,12 +86,24 @@ namespace ShadowTileEscape
             engine = new TurnEngine(initialState);
             saveService = SaveGameService.ForCurrentUser();
             var sessionSave = saveService.Load();
-            if (ambienceSource != null) ambienceSource.volume = 0.18f * sessionSave.settings.musicVolume;
-            if (sfxSource != null) sfxSource.volume = sessionSave.settings.sfxVolume;
+            hapticsEnabled = sessionSave.settings.haptics;
+            reducedFlashing = sessionSave.settings.reducedFlashing;
+            if (audioMixer != null)
+            {
+                audioMixer.SetFloat("MusicVolume", LinearToDecibels(sessionSave.settings.musicVolume));
+                audioMixer.SetFloat("SFXVolume", LinearToDecibels(sessionSave.settings.sfxVolume));
+            }
+            else
+            {
+                if (ambienceSource != null) ambienceSource.volume = 0.18f * sessionSave.settings.musicVolume;
+                if (sfxSource != null) sfxSource.volume = sessionSave.settings.sfxVolume;
+            }
             sessionSave.lastPlayedLevel = definition.levelNumber;
             if (!saveService.HasUnsupportedSave) saveService.Save(sessionSave);
             levelLabel.text = $"LEVEL {definition.levelNumber:00}  ·  {definition.displayName}";
-            statusLabel.text = definition.objectiveText;
+            objectiveLabel.text = definition.objectiveText;
+            statusLabel.text = definition.hintText;
+            hintPanel.SetActive(false);
             Refresh();
         }
 
@@ -88,6 +111,12 @@ namespace ShadowTileEscape
         {
             if (engine == null || Keyboard.current == null) return;
             var keyboard = Keyboard.current;
+            if (settingsController != null && settingsController.IsOpen) return;
+            if (hintPanel.activeSelf)
+            {
+                if (keyboard.escapeKey.wasPressedThisFrame) HideHint();
+                return;
+            }
             if (keyboard.escapeKey.wasPressedThisFrame) { TogglePause(); return; }
             if (keyboard.zKey.wasPressedThisFrame || keyboard.backspaceKey.wasPressedThisFrame) { Undo(); return; }
             if (keyboard.rKey.wasPressedThisFrame) { Restart(); return; }
@@ -107,7 +136,7 @@ namespace ShadowTileEscape
 
         public void Undo()
         {
-            if (paused || inputLocked) return;
+            if (paused || inputLocked || hintPanel.activeSelf) return;
             if (!engine.Undo()) return;
             statusLabel.text = "Turn rewound.";
             Refresh();
@@ -122,6 +151,7 @@ namespace ShadowTileEscape
             completionSaved = false;
             SetPaused(false);
             statusLabel.text = "Level restarted.";
+            hintPanel.SetActive(false);
             Refresh();
             PlayFeedback(undoClip);
         }
@@ -141,6 +171,13 @@ namespace ShadowTileEscape
         }
 
         public void Resume() => SetPaused(false);
+        public void ShowHint()
+        {
+            if (paused || engine.State.failed || engine.State.completed) return;
+            hintPanel.SetActive(true);
+            SetContentInteractive(false);
+        }
+        public void HideHint() { hintPanel.SetActive(false); SetContentInteractive(true); }
 
         void OnApplicationFocus(bool hasFocus)
         {
@@ -154,7 +191,7 @@ namespace ShadowTileEscape
 
         void Submit(PlayerCommand command)
         {
-            if (paused || inputLocked) return;
+            if (paused || inputLocked || hintPanel.activeSelf) return;
             var result = engine.TryExecute(command);
             if (!result.Accepted)
             {
@@ -173,10 +210,23 @@ namespace ShadowTileEscape
                 if (!saveService.HasUnsupportedSave) saveService.Save(save);
                 completionSaved = true;
             }
+            if (result.outcome == TurnOutcome.Failed)
+            {
+                failureTitleLabel.text = result.reason.IndexOf("guard", StringComparison.OrdinalIgnoreCase) >= 0
+                    ? "THE WATCH CLOSES IN"
+                    : "CAUGHT IN THE LIGHT";
+                failureReasonLabel.text = result.reason + "  Rewind the last turn or try the route again.";
+            }
+            else if (result.outcome == TurnOutcome.Completed)
+            {
+                var stars = ProgressionRules.StarsFor(engine.State.moveCount, definition.par);
+                victoryStatsLabel.text = $"STARS  {stars}/3\nMOVES  {engine.State.moveCount}  ·  PAR  {definition.par}\nSHARDS  {engine.State.ShardsCollected}/{definition.requiredShards}";
+            }
             Refresh();
             PlayFeedback(result.outcome == TurnOutcome.Failed ? failureClip
                 : result.outcome == TurnOutcome.Completed ? victoryClip
                 : command.type == CommandType.Interact ? interactClip : moveClip);
+            if (result.outcome == TurnOutcome.Failed || result.outcome == TurnOutcome.Completed) TryHaptic();
             StartCoroutine(PresentTurn());
         }
 
@@ -252,16 +302,22 @@ namespace ShadowTileEscape
                 ? $"LAMP  {DirectionGlyph(state.lights[0].direction)}"
                 : definition.chapterName.ToUpperInvariant();
 
-            moveLabel.text = $"MOVES {state.moveCount}/{definition.par}  ·  SHARD {state.ShardsCollected}/{definition.requiredShards}  ·  ACTIONS {ObjectiveActions(state)}";
+            var shardText = definition.requiredShards > 0 ? $"  ·  SHARDS {state.ShardsCollected}/{definition.requiredShards}" : string.Empty;
+            var actionTotal = definition.requiredLampRotations + definition.requiredMirrorRotations
+                + definition.requiredBoxPushes + definition.requiredCurtainToggles;
+            var actionText = actionTotal > 0 ? $"  ·  ACTIONS {ObjectiveActions(state)}" : string.Empty;
+            moveLabel.text = $"MOVES {state.moveCount}  ·  PAR {definition.par}{shardText}{actionText}";
             failurePanel.SetActive(state.failed);
             victoryPanel.SetActive(state.completed);
             undoButton.interactable = engine.HistoryCount > 0;
+            SetContentInteractive(!state.failed && !state.completed && !paused && !hintPanel.activeSelf);
         }
 
         void SetPaused(bool value)
         {
             paused = value;
             if (pausePanel != null) pausePanel.SetActive(value);
+            SetContentInteractive(!value);
             if (value && statusLabel != null) statusLabel.text = "Paused. The palace waits.";
             else if (!value && statusLabel != null && engine != null && !engine.State.failed && !engine.State.completed)
                 statusLabel.text = definition.hintText;
@@ -275,6 +331,12 @@ namespace ShadowTileEscape
         IEnumerator PresentTurn()
         {
             inputLocked = true;
+            if (reducedFlashing)
+            {
+                yield return null;
+                inputLocked = false;
+                yield break;
+            }
             if (turnPulseView != null) turnPulseView.gameObject.SetActive(true);
             var elapsed = 0f;
             while (elapsed < presentationDuration)
@@ -290,6 +352,20 @@ namespace ShadowTileEscape
                 turnPulseView.gameObject.SetActive(false);
             }
             inputLocked = false;
+        }
+
+        void TryHaptic()
+        {
+            if (hapticsEnabled && Application.isMobilePlatform) Handheld.Vibrate();
+        }
+
+        static float LinearToDecibels(float value) => value <= 0.0001f ? -80f : Mathf.Log10(value) * 20f;
+
+        void SetContentInteractive(bool value)
+        {
+            if (gameplayContent == null) return;
+            gameplayContent.interactable = value;
+            gameplayContent.blocksRaycasts = value;
         }
 
         void RefreshPositionPool(RectTransform[] views, GridCoord[] positions)

@@ -132,7 +132,7 @@ namespace ShadowTileEscape
         static bool IsValid(SaveData data)
         {
             if (data == null || data.version != CurrentVersion || data.unlockedLevel < 1 || data.unlockedLevel > 15) return false;
-            if (data.lastPlayedLevel < 1 || data.lastPlayedLevel > 15) return false;
+            if (data.lastPlayedLevel < 1 || data.lastPlayedLevel > data.unlockedLevel) return false;
             if (data.levels == null || data.levels.Length != 15 || data.settings == null) return false;
             for (var i = 0; i < data.levels.Length; i++)
             {

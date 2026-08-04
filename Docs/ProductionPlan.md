@@ -58,7 +58,8 @@ Current phase: **Phase 9 — Final evidence and documentation**
 - Phase 4: deterministic lamps, mirrors, curtains, boxes, patrol guards, moving lights, simultaneous guard resolution/preview, overlap-safe lighting, objective counters, failure, undo, and completion implemented.
 - Phase 5: complete screen flow, settings/reset confirmation, versioned safe save, Music/SFX mixer, generated feedback tones, safe-area UI, app icon, splash branding, and terminal/pause navigation implemented.
 - Phase 6: 15 serialized definitions/scenes, each with an exact solution executed by automated tests.
-- Phase 7 evidence: 43/43 EditMode and 5/5 PlayMode tests pass; every solution completes in both the model and its serialized scene; main menu, intro, level select, gameplay, failure, victory, pause, 1334×750, and 1024×768 captures visually inspected.
+- Phase 7 evidence: 43/43 EditMode and 10/10 PlayMode tests pass; every solution completes in both the model and its serialized scene. The commercial UI pass covers every screen plus settings/credits, all modal states, and a seven-resolution landscape matrix from 1334×750 through 2732×2048.
+- Phase 8 final rebuild: Android IL2CPP/ARM64 and iOS Unity export both pass with 0 errors/0 warnings; the refreshed unsigned iOS Xcode device build ends `** BUILD SUCCEEDED **`.
 
 ## Remaining work
 

@@ -59,12 +59,15 @@ Serialized scenes: Boot, Main Menu, Intro, How to Play, Level Select, 15 level s
 
 ## UI and accessibility
 
-- Canvas reference: 1920×1080. Full-bleed backgrounds sit outside a `SafeAreaRoot`; all interactive content is inside it.
-- Minimum reference touch target: 96×96 px with visible normal, pressed, focused, and disabled states.
-- Nunito Sans TMP: title 72–96, screen header 44–56, body/button 30–36, metadata 24–28 reference px; allow 30% text expansion.
+- Canvas reference: 1920×1080 with width/height matching at 0.5. Full-bleed backgrounds sit outside a `SafeAreaRoot`; all interactive content is inside it. `SafeAreaController` updates anchors only when the resolution or safe area changes.
+- Minimum reference touch target: 96×96 px. Buttons use original rounded panels, cyan edge treatment, shadow depth, violet primary emphasis, and distinct normal/highlighted/pressed/selected/disabled states plus restrained scale feedback.
+- Nunito Sans TMP: display 68–96, screen header 42–56, section 26–34, button/body 18–28, metadata 14–20 reference px. Hierarchy uses weight, size, spacing, and color instead of decorative fonts.
+- Surface tokens: blue-black full bleed, navy story cards, indigo navigation cards, raised palace-indigo panels, cyan focus/safe accents, violet primary actions, gold narrative/danger accents, orange destructive/failure actions, ivory primary copy, and muted periwinkle secondary copy.
 - Danger uses gold plus chevrons/hatching/source direction; safe shadow retains cyan edge/texture. Guards, lamps, locks, and unfamiliar actions use icon plus text.
 - Reduced Flashing removes rapid pulses, white flashes, dense sparkle, and camera shake without changing logic. Haptics and audio remain redundant feedback only.
-- Back behavior and modal input blocking are deterministic; pausing/focus loss stops new command submission.
+- Settings exposes persistent Music and SFX volume, haptics, reduced flashing, tutorial reset, confirmed progress reset, and Credits & Licenses. Credits is deliberately absent from the Main Menu and is available through Settings and Completion.
+- Back behavior and modal input blocking are deterministic; each nested modal blocks its base panel, Escape returns one layer at a time, and pausing/focus loss stops new command submission.
+- Responsive validation covers 1334×750, 1920×1080, 2436×1125, 2340×1080, 2532×1170, 2796×1290, and 2732×2048 landscape renders.
 
 ## Art direction
 
