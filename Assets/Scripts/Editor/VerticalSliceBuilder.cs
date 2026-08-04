@@ -784,10 +784,10 @@ namespace ShadowTileEscape.Editor
             CreateDirectionIcon(west.transform, 90);
             var interact = CreateButton(content, "Interact", "Interact", new Vector2(0.90f, 0.19f), new Vector2(210, 116), Violet, 23);
             CreateIconBadge(content, UiIcon.Interact, new Vector2(0.90f, 0.32f), 66);
-            var undo = CreateButton(topBand.transform, "Undo", "Undo", new Vector2(0.76f, 0.5f), new Vector2(126, 76), Palace, 18);
-            var restart = CreateButton(topBand.transform, "Restart", "Restart", new Vector2(0.84f, 0.5f), new Vector2(126, 76), Palace, 18);
-            var hint = CreateButton(topBand.transform, "Hint", "Hint", new Vector2(0.895f, 0.5f), new Vector2(104, 76), Palace, 18);
-            var pause = CreateButton(topBand.transform, "Pause", "Pause", new Vector2(0.965f, 0.5f), new Vector2(104, 76), Palace, 17);
+            var undo = CreateButton(topBand.transform, "Undo", "Undo", new Vector2(0.745f, 0.5f), new Vector2(118, 76), Palace, 18);
+            var restart = CreateButton(topBand.transform, "Restart", "Restart", new Vector2(0.825f, 0.5f), new Vector2(114, 76), Palace, 18);
+            var hint = CreateButton(topBand.transform, "Hint", "Hint", new Vector2(0.90f, 0.5f), new Vector2(100, 76), Palace, 18);
+            var pause = CreateButton(topBand.transform, "Pause", "Pause", new Vector2(0.968f, 0.5f), new Vector2(100, 76), Palace, 17);
 
             UnityEventTools.AddPersistentListener(north.onClick, controller.MoveNorth);
             UnityEventTools.AddPersistentListener(east.onClick, controller.MoveEast);
