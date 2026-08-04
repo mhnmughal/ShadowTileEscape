@@ -5,7 +5,7 @@ Current phase: **Phase 3 — Playable vertical slice**
 ## Discovery findings
 
 - Unity project root: `/Users/mehranmughal/Documents/Game Development/ShadowTileEscape`
-- Git: `BLOCKED` — no `.git` worktree metadata exists at or above the project root.
+- Git: root repository initialized; baseline commit `832ceaf` preserves Phases 0–2.
 - Existing project: URP 2D starter with one `Assets/Scenes/SampleScene.unity`.
 - Unity 6000.3.19f1 is open on the exact project; MCP reports PID 3569, active clean `SampleScene`, URP, Linear color, and StandaloneOSX target.
 - AndroidPlayer/SDK/NDK/OpenJDK and iOSSupport are installed; Android platforms 34–36 and Xcode 26.6 are available.
@@ -15,7 +15,7 @@ Current phase: **Phase 3 — Playable vertical slice**
 - [x] Phase 0: discovery, baseline open/compile/Console evidence
 - [x] Phase 1: AnkleBreaker plugin/server/configuration and exact-project MCP health gate
 - [x] Phase 2: architecture, GDD, visual direction, and parallel audits
-- [ ] Phase 3: validated vertical slice
+- [x] Phase 3: validated vertical slice
 - [ ] Phase 4: complete gameplay systems
 - [ ] Phase 5: complete UI, save, audio, and presentation
 - [ ] Phase 6: 15 handcrafted validated levels
@@ -32,10 +32,9 @@ Current phase: **Phase 3 — Playable vertical slice**
 
 ## Risks and blockers
 
-- Root Git was initialized after preserving the cloned dependencies' nested metadata outside the project; the first phase commit is pending final status review.
-- Root Git is absent; the two cloned upstream tool/package repositories contain nested Git metadata that must be handled before a safe first root commit.
-- Mobile orientation, identifiers, safe-area behavior, icons, scene order, input actions, and quality remain starter defaults.
-- Mobile build-module availability is unknown.
+- Root Git is healthy; vendored upstream metadata remains recoverable at `/private/tmp/shadow-tile-escape-upstream-git-20260804/` for this session.
+- App icons, complete input action cleanup, audio, all non-vertical-slice scenes, and device/aspect captures remain pending.
+- Android and iOS modules are installed; release signing credentials remain external release inputs.
 
 ## Acceptance gates
 
@@ -55,7 +54,8 @@ Current phase: **Phase 3 — Playable vertical slice**
 - Phase 2 read-only architecture, UI/visual, gameplay/QA, and licensing audits completed and consolidated.
 - Official Nunito Sans sources/OFL imported; TMP essential resources and Nunito SDF assets created; TMP default verified.
 - Phase 2 gate: four audits consolidated, licensing blockers remediated, zero compilation errors and empty Console after clear.
+- Phase 3 gate: deterministic domain and save implemented; 12/12 EditMode and 3/3 PlayMode tests pass; Boot/Main Menu/Level 1 flow, 10-turn solution, failure/undo, persisted completion, and four screenshot states are verified.
 
 ## Remaining work
 
-All implementation and validation work from Phase 0 onward remains.
+Phases 4–9 remain: all mechanics/presentation services, complete screen flow, 14 additional levels, full QA, mobile builds/profiling, and final evidence.

@@ -1,0 +1,9 @@
+{
+  "name": "ShadowTileEscape.Runtime",
+  "rootNamespace": "ShadowTileEscape",
+  "references": [
+    "Unity.InputSystem",
+    "Unity.TextMeshPro"
+  ],
+  "autoReferenced": true
+}

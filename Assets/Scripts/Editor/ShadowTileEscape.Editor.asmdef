@@ -1,0 +1,13 @@
+{
+  "name": "ShadowTileEscape.Editor",
+  "rootNamespace": "ShadowTileEscape.Editor",
+  "references": [
+    "ShadowTileEscape.Runtime",
+    "UnityEditor.TestRunner",
+    "Unity.TextMeshPro",
+    "Unity.InputSystem"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

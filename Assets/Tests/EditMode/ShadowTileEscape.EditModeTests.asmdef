@@ -1,0 +1,13 @@
+{
+  "name": "ShadowTileEscape.EditModeTests",
+  "rootNamespace": "ShadowTileEscape.Tests",
+  "references": [
+    "ShadowTileEscape.Runtime"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

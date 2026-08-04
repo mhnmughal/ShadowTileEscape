@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="12" result="Passed" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-08-04 10:05:08Z" end-time="2026-08-04 10:05:09Z" duration="1.207238">
+  <test-suite type="TestSuite" id="1000" name="Shadow Tile Escape" fullname="Shadow Tile Escape" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-08-04 10:05:08Z" end-time="2026-08-04 10:05:09Z" duration="1.207238" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1016" name="ShadowTileEscape.EditModeTests.dll" fullname="/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Library/ScriptAssemblies/ShadowTileEscape.EditModeTests.dll" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-08-04 10:05:08Z" end-time="2026-08-04 10:05:09Z" duration="1.009367" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="10880" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1017" name="ShadowTileEscape" fullname="ShadowTileEscape" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-08-04 10:05:08Z" end-time="2026-08-04 10:05:09Z" duration="0.816754" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1018" name="Tests" fullname="ShadowTileEscape.Tests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-08-04 10:05:08Z" end-time="2026-08-04 10:05:09Z" duration="0.616797" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1002" name="SaveGameServiceTests" fullname="ShadowTileEscape.Tests.SaveGameServiceTests" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.239038" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1004" name="CompletionNeverRegressesAndCapsUnlockAtFifteen" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.CompletionNeverRegressesAndCapsUnlockAtFifteen" methodname="CompletionNeverRegressesAndCapsUnlockAtFifteen" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1106560724" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.025126" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="CorruptPrimaryFallsBackToLastKnownGoodBackup" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.CorruptPrimaryFallsBackToLastKnownGoodBackup" methodname="CorruptPrimaryFallsBackToLastKnownGoodBackup" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1960286555" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.005165" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1006" name="DefaultsAreReturnedWhenNoValidSaveExists" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.DefaultsAreReturnedWhenNoValidSaveExists" methodname="DefaultsAreReturnedWhenNoValidSaveExists" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="1242637529" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.001777" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="RoundTripPreservesProgressAndSettings" fullname="ShadowTileEscape.Tests.SaveGameServiceTests.RoundTripPreservesProgressAndSettings" methodname="RoundTripPreservesProgressAndSettings" classname="ShadowTileEscape.Tests.SaveGameServiceTests" runstate="Runnable" seed="646150281" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.000976" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1007" name="TurnEngineTests" fullname="ShadowTileEscape.Tests.TurnEngineTests" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.176936" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1015" name="ExitRequiresConfiguredShardCount" fullname="ShadowTileEscape.Tests.TurnEngineTests.ExitRequiresConfiguredShardCount" methodname="ExitRequiresConfiguredShardCount" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1592486210" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.005997" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1012" name="FailedLightTurnCanBeUndone" fullname="ShadowTileEscape.Tests.TurnEngineTests.FailedLightTurnCanBeUndone" methodname="FailedLightTurnCanBeUndone" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="502377023" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.002682" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1011" name="InvalidMoveDoesNotMutateOrCreateHistory" fullname="ShadowTileEscape.Tests.TurnEngineTests.InvalidMoveDoesNotMutateOrCreateHistory" methodname="InvalidMoveDoesNotMutateOrCreateHistory" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="337231190" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.000671" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1013" name="LampInteractionRotatesClockwiseAndCountsTurn" fullname="ShadowTileEscape.Tests.TurnEngineTests.LampInteractionRotatesClockwiseAndCountsTurn" methodname="LampInteractionRotatesClockwiseAndCountsTurn" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="460093197" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.001533" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="LightIncludesTraversedCellsButNotSource" fullname="ShadowTileEscape.Tests.TurnEngineTests.LightIncludesTraversedCellsButNotSource" methodname="LightIncludesTraversedCellsButNotSource" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="51570031" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.000816" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1009" name="OpaqueBoxStopsBeforeItsCell" fullname="ShadowTileEscape.Tests.TurnEngineTests.OpaqueBoxStopsBeforeItsCell" methodname="OpaqueBoxStopsBeforeItsCell" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="301183788" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.000664" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1014" name="SimultaneousGuardsWaitOnContestedDestination" fullname="ShadowTileEscape.Tests.TurnEngineTests.SimultaneousGuardsWaitOnContestedDestination" methodname="SimultaneousGuardsWaitOnContestedDestination" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1316485631" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.001206" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="SlashMirrorReflectsEastToNorth" fullname="ShadowTileEscape.Tests.TurnEngineTests.SlashMirrorReflectsEastToNorth" methodname="SlashMirrorReflectsEastToNorth" classname="ShadowTileEscape.Tests.TurnEngineTests" runstate="Runnable" seed="1933446499" result="Passed" start-time="2026-08-04 10:05:09Z" end-time="2026-08-04 10:05:09Z" duration="0.000652" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /Users/mehranmughal/Library/Application Support/Moonlit Loom Games/Shadow Tile Escape/TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

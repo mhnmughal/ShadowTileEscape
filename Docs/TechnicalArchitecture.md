@@ -1,14 +1,14 @@
 # Technical Architecture
 
-Status: Phase 2 architecture approved; implementation `NOT RUN`.
+Status: Phase 3 core implementation verified; Phases 4–9 remain.
 
 ## Verified baseline
 
 - Unity 6000.3.19f1, URP 17.3.0 with Renderer2D, Linear color, Input System 1.19.0, uGUI/TMP 2.0.0, Test Framework 1.6.0.
 - Exact-project MCP is healthy on port 7890 with plugin 2.39.5 and server 2.35.6.
 - AndroidPlayer/SDK/NDK/OpenJDK and iOSSupport are installed; Android platforms 34–36 and Xcode 26.6 are available.
-- Only the starter `SampleScene` exists in Build Settings. There are no gameplay scripts/prefabs/scenes yet.
-- Root Git is unavailable; nested upstream repositories require deliberate vendoring before the first root commit.
+- Build Settings contain serialized Boot, MainMenu, and Level_01 scenes; deterministic runtime/editor/test assemblies are present.
+- Root Git baseline is commit `832ceaf`; upstream dependencies are vendored ordinary files.
 
 ## Responsibilities and boundaries
 

@@ -29,3 +29,12 @@
 - Bugs fixed: TMP asset generation null due missing TMP Settings; imported essential resources and retried successfully. Sandbox protocol test EPERM diagnosed and rerun with appropriate permission.
 - Source control: root Git initialized; upstream dependency Git metadata preserved at `/private/tmp/shadow-tile-escape-upstream-git-20260804/` so pinned contents are vendored as ordinary files. Phase commit pending.
 - Remaining issues: establish safe root Git handling; configure input/mobile settings; implement and validate vertical slice.
+
+## 2026-08-04 — Phase 3 vertical slice
+
+- Work completed: implemented deterministic grid/light/turn/undo/guard/shard/exit model; versioned atomic save with backup recovery and monotonic progression; serialized Boot, Main Menu, and Level 1; landscape IDs/orientation/iOS 15/Android IL2CPP ARM64/build scene order; safe-area Canvas; keyboard and mobile controls; failure/victory overlays; editor baker and QA runner.
+- Tests run: compilation PASS (0); EditMode 12/12 PASS; PlayMode 3/3 PASS. The 10-turn `N,N,N,N,E,E,E,E,E,E` solution, exposure route `E×6,N,N`, undo restoration, serialized UI navigation, and save persistence were executed.
+- Screenshots: `VerticalSlice_MainMenu.png`, `VerticalSlice_Level01_Initial.png`, `VerticalSlice_Level01_Failure.png`, `VerticalSlice_Level01_Completed.png`; all visually inspected.
+- Bugs discovered/fixed: programmatic InputSystem UI default assignment threw during scene bake; fixed by inactive construction and explicit project action references. `LevelDefinition` script/filename mismatch produced an invalid asset reference; moved to `LevelDefinition.cs` and directly assigned/serialized. Missing Nunito arrow glyphs replaced with readable ASCII direction labels. Async failure capture initially landed after Undo; added an explicit pre-undo render delay.
+- Commit hash: pending Phase 3 checkpoint.
+- Remaining issues: complete mechanics/screens/audio/presentation, levels 2–15, aspect/device matrix, builds/profiling, final documentation.

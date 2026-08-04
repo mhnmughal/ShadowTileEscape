@@ -1,0 +1,11 @@
+{
+  "name": "ShadowTileEscape.PlayModeTests",
+  "rootNamespace": "ShadowTileEscape.Tests",
+  "references": [
+    "ShadowTileEscape.Runtime",
+    "Unity.TextMeshPro"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
