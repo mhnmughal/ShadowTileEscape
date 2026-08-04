@@ -12,7 +12,7 @@ Status: Android release player, iOS Unity export, and unsigned iOS device build 
 
 - Android APK: 39,259,482 bytes (about 37.4 MiB); SHA-256 `f29a2ca651d8f254c1af8c69e5a0dbc9fd8052e805228b536fbd6fd1f5f08af5`.
 - iOS export: about 1.0 GB across 3,112 source/project files; project SHA-256 `79d3e35f74a016f6c68815635e4c88fd5630c0fd38cc32d771ab71bc8c704d58`.
-- iOS project contains bundle ID `com.moonlitloom.shadowtileescape` and `IPHONEOS_DEPLOYMENT_TARGET = 15.0`.
+- Current Android application ID is `com.moonlitloom.shadowtileescape`; the user-updated iOS bundle ID is `com.moonlitsicku.shadowtileescape`. The iOS deployment target remains 15.0.
 - The refreshed unsigned native compile used Xcode 26.6 / iphoneos 26.5 with signing disabled and ended `** BUILD SUCCEEDED **`.
 - An initial Android UI-regression build reported five stale Sprite-rectangle warnings on overwritten QA screenshots. Those evidence assets were changed to ordinary Texture importers; the repeated final Android build and iOS export both completed with 0 errors/0 warnings.
 

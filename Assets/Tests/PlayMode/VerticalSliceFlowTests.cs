@@ -123,7 +123,9 @@ namespace ShadowTileEscape.Tests
         public IEnumerator EverySerializedLevelSceneCompletesAndFinaleOpensCompletion()
         {
             var definitionField = typeof(GameplayController).GetField("definition", BindingFlags.Instance | BindingFlags.NonPublic);
+            var inputLockedField = typeof(GameplayController).GetField("inputLocked", BindingFlags.Instance | BindingFlags.NonPublic);
             Assert.That(definitionField, Is.Not.Null);
+            Assert.That(inputLockedField, Is.Not.Null);
             for (var level = 1; level <= 15; level++)
             {
                 SceneManager.LoadScene($"Level_{level:00}");
@@ -142,7 +144,7 @@ namespace ShadowTileEscape.Tests
                         case "I": controller.Interact(); break;
                         default: Assert.Fail($"Unknown solution token '{token}' in Level {level:00}"); break;
                     }
-                    yield return new WaitForSecondsRealtime(0.09f);
+                    yield return new WaitUntil(() => !(bool)inputLockedField.GetValue(controller));
                 }
                 Assert.That(controller.CurrentState.completed, Is.True, $"Level {level:00} serialized solution");
             }

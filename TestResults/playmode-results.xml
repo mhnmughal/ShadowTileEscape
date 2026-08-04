@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="10" result="Passed" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:12:16Z" duration="33.2799361">
-  <test-suite type="TestSuite" id="1019" name="Shadow Tile Escape" fullname="Shadow Tile Escape" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:12:16Z" duration="33.279936" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="10" result="Passed" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:52Z" duration="33.5636157">
+  <test-suite type="TestSuite" id="1019" name="Shadow Tile Escape" fullname="Shadow Tile Escape" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:52Z" duration="33.563616" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="PlayMode" />
     </properties>
-    <test-suite type="Assembly" id="1013" name="ShadowTileEscape.PlayModeTests.dll" fullname="/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Library/ScriptAssemblies/ShadowTileEscape.PlayModeTests.dll" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:12:16Z" duration="33.260400" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1013" name="ShadowTileEscape.PlayModeTests.dll" fullname="/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Library/ScriptAssemblies/ShadowTileEscape.PlayModeTests.dll" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:52Z" duration="33.540998" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
         <property name="_PID" value="10880" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
       </properties>
-      <test-suite type="TestSuite" id="1014" name="ShadowTileEscape" fullname="ShadowTileEscape" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:12:16Z" duration="33.253156" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1014" name="ShadowTileEscape" fullname="ShadowTileEscape" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:52Z" duration="33.538945" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1015" name="Tests" fullname="ShadowTileEscape.Tests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:12:16Z" duration="33.235724" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1015" name="Tests" fullname="ShadowTileEscape.Tests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:52Z" duration="33.519923" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestFixture" id="1001" name="UiRedesignFlowTests" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:11:45Z" duration="2.450820" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1001" name="UiRedesignFlowTests" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:21Z" duration="2.649922" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1006" name="CompletionShowsAggregateResultsAndEveryRequiredDestination" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.CompletionShowsAggregateResultsAndEveryRequiredDestination" methodname="CompletionShowsAggregateResultsAndEveryRequiredDestination" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1582662001" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:11:43Z" duration="0.450868" asserts="0">
+            <test-case id="1006" name="CompletionShowsAggregateResultsAndEveryRequiredDestination" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.CompletionShowsAggregateResultsAndEveryRequiredDestination" methodname="CompletionShowsAggregateResultsAndEveryRequiredDestination" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1659951294" result="Passed" start-time="2026-08-04 13:44:18Z" end-time="2026-08-04 13:44:19Z" duration="0.443679" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1005" name="GameplayHintPauseSettingsAndModalCommandBlockingWork" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.GameplayHintPauseSettingsAndModalCommandBlockingWork" methodname="GameplayHintPauseSettingsAndModalCommandBlockingWork" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1532872653" result="Passed" start-time="2026-08-04 13:11:43Z" end-time="2026-08-04 13:11:44Z" duration="0.664821" asserts="0">
+            <test-case id="1005" name="GameplayHintPauseSettingsAndModalCommandBlockingWork" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.GameplayHintPauseSettingsAndModalCommandBlockingWork" methodname="GameplayHintPauseSettingsAndModalCommandBlockingWork" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1079172475" result="Passed" start-time="2026-08-04 13:44:19Z" end-time="2026-08-04 13:44:19Z" duration="0.732036" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1004" name="LevelSelectRendersChapterAndPerLevelProgress" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.LevelSelectRendersChapterAndPerLevelProgress" methodname="LevelSelectRendersChapterAndPerLevelProgress" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1361272010" result="Passed" start-time="2026-08-04 13:11:44Z" end-time="2026-08-04 13:11:44Z" duration="0.334610" asserts="0">
+            <test-case id="1004" name="LevelSelectRendersChapterAndPerLevelProgress" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.LevelSelectRendersChapterAndPerLevelProgress" methodname="LevelSelectRendersChapterAndPerLevelProgress" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="917859021" result="Passed" start-time="2026-08-04 13:44:19Z" end-time="2026-08-04 13:44:20Z" duration="0.352382" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1002" name="MainMenuPrimaryStateNewGameConfirmationAndCreditsRelocationWork" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.MainMenuPrimaryStateNewGameConfirmationAndCreditsRelocationWork" methodname="MainMenuPrimaryStateNewGameConfirmationAndCreditsRelocationWork" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="860053336" result="Passed" start-time="2026-08-04 13:11:44Z" end-time="2026-08-04 13:11:45Z" duration="0.641218" asserts="0">
+            <test-case id="1002" name="MainMenuPrimaryStateNewGameConfirmationAndCreditsRelocationWork" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.MainMenuPrimaryStateNewGameConfirmationAndCreditsRelocationWork" methodname="MainMenuPrimaryStateNewGameConfirmationAndCreditsRelocationWork" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="232456738" result="Passed" start-time="2026-08-04 13:44:20Z" end-time="2026-08-04 13:44:20Z" duration="0.734244" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1003" name="SettingsPersistMixerComfortTutorialAndSettingsPreservingProgressReset" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.SettingsPersistMixerComfortTutorialAndSettingsPreservingProgressReset" methodname="SettingsPersistMixerComfortTutorialAndSettingsPreservingProgressReset" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1597826598" result="Passed" start-time="2026-08-04 13:11:45Z" end-time="2026-08-04 13:11:45Z" duration="0.343986" asserts="0">
+            <test-case id="1003" name="SettingsPersistMixerComfortTutorialAndSettingsPreservingProgressReset" fullname="ShadowTileEscape.Tests.UiRedesignFlowTests.SettingsPersistMixerComfortTutorialAndSettingsPreservingProgressReset" methodname="SettingsPersistMixerComfortTutorialAndSettingsPreservingProgressReset" classname="ShadowTileEscape.Tests.UiRedesignFlowTests" runstate="Runnable" seed="1719483746" result="Passed" start-time="2026-08-04 13:44:20Z" end-time="2026-08-04 13:44:21Z" duration="0.370126" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
@@ -53,43 +53,43 @@
               </properties>
             </test-case>
           </test-suite>
-          <test-suite type="TestFixture" id="1007" name="VerticalSliceFlowTests" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-08-04 13:11:45Z" end-time="2026-08-04 13:12:16Z" duration="30.767937" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestFixture" id="1007" name="VerticalSliceFlowTests" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-08-04 13:44:21Z" end-time="2026-08-04 13:44:52Z" duration="30.852033" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-case id="1008" name="BootMenuAndLevelSelectReachLevelOne" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.BootMenuAndLevelSelectReachLevelOne" methodname="BootMenuAndLevelSelectReachLevelOne" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="1983761598" result="Passed" start-time="2026-08-04 13:11:45Z" end-time="2026-08-04 13:11:47Z" duration="1.641599" asserts="0">
+            <test-case id="1008" name="BootMenuAndLevelSelectReachLevelOne" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.BootMenuAndLevelSelectReachLevelOne" methodname="BootMenuAndLevelSelectReachLevelOne" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="1275569628" result="Passed" start-time="2026-08-04 13:44:21Z" end-time="2026-08-04 13:44:23Z" duration="1.703055" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1012" name="EverySerializedLevelSceneCompletesAndFinaleOpensCompletion" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.EverySerializedLevelSceneCompletesAndFinaleOpensCompletion" methodname="EverySerializedLevelSceneCompletesAndFinaleOpensCompletion" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="741767438" result="Passed" start-time="2026-08-04 13:11:47Z" end-time="2026-08-04 13:12:12Z" duration="24.966883" asserts="0">
+            <test-case id="1012" name="EverySerializedLevelSceneCompletesAndFinaleOpensCompletion" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.EverySerializedLevelSceneCompletesAndFinaleOpensCompletion" methodname="EverySerializedLevelSceneCompletesAndFinaleOpensCompletion" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="751504062" result="Passed" start-time="2026-08-04 13:44:23Z" end-time="2026-08-04 13:44:48Z" duration="25.017418" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1010" name="ExposureFailsAndUndoRestoresAcceptedPreTurnState" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.ExposureFailsAndUndoRestoresAcceptedPreTurnState" methodname="ExposureFailsAndUndoRestoresAcceptedPreTurnState" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="1607953897" result="Passed" start-time="2026-08-04 13:12:12Z" end-time="2026-08-04 13:12:14Z" duration="1.465382" asserts="0">
+            <test-case id="1010" name="ExposureFailsAndUndoRestoresAcceptedPreTurnState" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.ExposureFailsAndUndoRestoresAcceptedPreTurnState" methodname="ExposureFailsAndUndoRestoresAcceptedPreTurnState" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="433791153" result="Passed" start-time="2026-08-04 13:44:48Z" end-time="2026-08-04 13:44:49Z" duration="1.480006" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1011" name="PausePanelBlocksCommandsAndResumeRestoresInput" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.PausePanelBlocksCommandsAndResumeRestoresInput" methodname="PausePanelBlocksCommandsAndResumeRestoresInput" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="1808479595" result="Passed" start-time="2026-08-04 13:12:14Z" end-time="2026-08-04 13:12:14Z" duration="0.448644" asserts="0">
+            <test-case id="1011" name="PausePanelBlocksCommandsAndResumeRestoresInput" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.PausePanelBlocksCommandsAndResumeRestoresInput" methodname="PausePanelBlocksCommandsAndResumeRestoresInput" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="242975016" result="Passed" start-time="2026-08-04 13:44:49Z" end-time="2026-08-04 13:44:50Z" duration="0.448974" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
             </test-case>
-            <test-case id="1009" name="SerializedTouchButtonAndSolutionCompleteLevel" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.SerializedTouchButtonAndSolutionCompleteLevel" methodname="SerializedTouchButtonAndSolutionCompleteLevel" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="1791903436" result="Passed" start-time="2026-08-04 13:12:14Z" end-time="2026-08-04 13:12:16Z" duration="2.237576" asserts="0">
+            <test-case id="1009" name="SerializedTouchButtonAndSolutionCompleteLevel" fullname="ShadowTileEscape.Tests.VerticalSliceFlowTests.SerializedTouchButtonAndSolutionCompleteLevel" methodname="SerializedTouchButtonAndSolutionCompleteLevel" classname="ShadowTileEscape.Tests.VerticalSliceFlowTests" runstate="Runnable" seed="291856581" result="Passed" start-time="2026-08-04 13:44:50Z" end-time="2026-08-04 13:44:52Z" duration="2.192805" asserts="0">
               <properties>
                 <property name="_JOINTYPE" value="UnityCombinatorial" />
                 <property name="retryIteration" value="0" />
                 <property name="repeatIteration" value="0" />
               </properties>
-              <output><![CDATA[Saving results to: /Users/mehranmughal/Library/Application Support/Moonlit Loom Games/Shadow Tile Escape/TestResults.xml
+              <output><![CDATA[Saving results to: /Users/mehranmughal/Library/Application Support/Moonlit Sicku Games/Shadow Tile Escape/TestResults.xml
 ]]></output>
             </test-case>
           </test-suite>

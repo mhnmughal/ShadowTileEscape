@@ -85,7 +85,7 @@ The editor baker creates all required panels, buttons, vector-like geometry icon
 
 ## Build/release configuration
 
-Landscape left/right, safe-area behavior, bundle ID `com.moonlitloom.shadowtileescape`, 22-scene order, 60 FPS target, crash-report API off, Android IL2CPP/ARM64, and iOS minimum 15 are serialized. A 1024px icon and branded splash are configured. Signing team and release keystore remain release-only external inputs.
+Landscape left/right, safe-area behavior, Android ID `com.moonlitloom.shadowtileescape`, iOS ID `com.moonlitsicku.shadowtileescape`, 22-scene order, 60 FPS target, crash-report API off, Android IL2CPP/ARM64, and iOS minimum 15 are serialized. A 1024px icon and branded splash are configured. Signing team and release keystore remain release-only external inputs.
 
 Audio uses one serialized `ShadowTileEscape.mixer` with Master/Music/SFX groups and exposed `MusicVolume`/`SFXVolume` parameters. All ambience routes to Music and gameplay feedback routes to SFX; saved sliders update the mixer live and persist through the central save.
 

@@ -420,7 +420,6 @@ namespace ShadowTileEscape.Editor
             var begin = CreateButton(card.transform, "BeginButton", "Enter the Palace", new Vector2(0.5f, 0.12f), new Vector2(500, 90), Violet, 25);
             CreateButtonIcon(begin.transform, UiIcon.Continue);
             UnityEventTools.AddPersistentListener(begin.onClick, flow.LoadDestination);
-            CreateText(safe, "Attribution", "Moonlit Loom Games  ·  Made with AnkleBreaker MCP", 18, Muted, new Vector2(0.5f, 0.05f), new Vector2(720, 34));
             EditorSceneManager.SaveScene(scene, "Assets/Scenes/Boot.unity");
         }
 
@@ -493,7 +492,6 @@ namespace ShadowTileEscape.Editor
             SetPrivate(menuController, "menuContent", contentGroup);
 
             CreateText(safe, "Version", "v0.9.0", 18, Muted, new Vector2(0.10f, 0.045f), new Vector2(250, 34), FontStyles.Normal, TextAlignmentOptions.Left);
-            CreateText(safe, "Attribution", "Moonlit Loom Games  ·  Made with AnkleBreaker MCP", 18, Muted, new Vector2(0.82f, 0.045f), new Vector2(520, 34), FontStyles.Normal, TextAlignmentOptions.Right);
             EditorSceneManager.SaveScene(scene, "Assets/Scenes/MainMenu.unity");
         }
 
@@ -833,11 +831,11 @@ namespace ShadowTileEscape.Editor
             victory.SetActive(false);
 
             var pausePanel = CreateModal(safe, "PausePanel", "Paused", "The palace waits in silence.", Cyan);
-            var resume = CreateButton(pausePanel.transform, "Resume", "Resume", new Vector2(0.30f, 0.30f), new Vector2(220, 90), Violet, 23);
-            var pauseRestart = CreateButton(pausePanel.transform, "PauseRestart", "Restart", new Vector2(0.42f, 0.30f), new Vector2(200, 90), Palace, 21);
-            var pauseSettings = CreateButton(pausePanel.transform, "PauseSettings", "Settings", new Vector2(0.54f, 0.30f), new Vector2(200, 90), Palace, 21);
-            var pauseSelect = CreateButton(pausePanel.transform, "PauseLevelSelect", "Level Select", new Vector2(0.67f, 0.30f), new Vector2(220, 90), Palace, 20);
-            var pauseMenu = CreateButton(pausePanel.transform, "PauseMenu", "Main Menu", new Vector2(0.80f, 0.30f), new Vector2(210, 90), Palace, 20);
+            var resume = CreateButton(pausePanel.transform, "Resume", "Resume", new Vector2(0.28f, 0.30f), new Vector2(220, 90), Violet, 23);
+            var pauseRestart = CreateButton(pausePanel.transform, "PauseRestart", "Restart", new Vector2(0.39f, 0.30f), new Vector2(200, 90), Palace, 21);
+            var pauseSettings = CreateButton(pausePanel.transform, "PauseSettings", "Settings", new Vector2(0.50f, 0.30f), new Vector2(200, 90), Palace, 21);
+            var pauseSelect = CreateButton(pausePanel.transform, "PauseLevelSelect", "Level Select", new Vector2(0.61f, 0.30f), new Vector2(220, 90), Palace, 20);
+            var pauseMenu = CreateButton(pausePanel.transform, "PauseMenu", "Main Menu", new Vector2(0.72f, 0.30f), new Vector2(210, 90), Palace, 20);
             UnityEventTools.AddPersistentListener(resume.onClick, controller.Resume);
             UnityEventTools.AddPersistentListener(pauseRestart.onClick, controller.Restart);
             UnityEventTools.AddPersistentListener(pauseSelect.onClick, controller.OpenLevelSelect);
@@ -1083,9 +1081,9 @@ namespace ShadowTileEscape.Editor
         }
 
         static readonly string CreditsText =
-            "SHADOW TILE ESCAPE\nDesign, programming, level design, UI, geometric game art, and generated feedback tones: Moonlit Loom Games.\n\n" +
+            "SHADOW TILE ESCAPE\nOriginal design, programming, level design, UI, geometric game art, and generated feedback tones.\n\n" +
             "NUNITO SANS\nCopyright The Nunito Sans Project Authors. Licensed under the SIL Open Font License 1.1. The font and license are bundled with the game project.\n\n" +
-            "ANKLEBREAKER UNITY MCP\nDevelopment tooling by AnkleBreaker Studio. Unity plugin v2.39.5 and server v2.35.6 used under the AnkleBreaker Open License v1.0.\n\n" +
+            "DEVELOPMENT TOOLING\nMade with AnkleBreaker MCP.\n\n" +
             "OPENAI IMAGE GENERATION\nOriginal Shadow Tile Escape app icon generated for this project with OpenAI built-in ImageGen.\n\n" +
             "UNITY PACKAGES\nUnity Engine, Universal Render Pipeline, Input System, TextMesh Pro, uGUI, Test Framework, Performance Testing, Mathematics, and their transitive Unity packages are used under their applicable Unity package terms.\n\n" +
             "AUDIO & ART\nAmbient loop and interface cues are original editor-generated waveforms. All remaining UI geometry and icons are original project-authored assets. No paid or copied icon packs are used.";
@@ -1313,7 +1311,7 @@ namespace ShadowTileEscape.Editor
 
         static void ConfigureProject()
         {
-            PlayerSettings.companyName = "Moonlit Loom Games";
+            PlayerSettings.companyName = "Moonlit Sicku Games";
             PlayerSettings.productName = "Shadow Tile Escape";
             PlayerSettings.bundleVersion = "0.9.0";
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
@@ -1322,7 +1320,7 @@ namespace ShadowTileEscape.Editor
             PlayerSettings.allowedAutorotateToLandscapeLeft = true;
             PlayerSettings.allowedAutorotateToLandscapeRight = true;
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.moonlitloom.shadowtileescape");
-            PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.iOS, "com.moonlitloom.shadowtileescape");
+            PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.iOS, "com.moonlitsicku.shadowtileescape");
             PlayerSettings.iOS.targetOSVersionString = "15.0";
             PlayerSettings.iOS.buildNumber = "1";
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);

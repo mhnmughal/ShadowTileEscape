@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Moonlit Loom Games
+  companyName: Moonlit Sicku Games
   productName: Shadow Tile Escape
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -174,7 +174,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.moonlitloom.shadowtileescape
     Standalone: com.DefaultCompany.2D-URP
-    iPhone: com.moonlitloom.shadowtileescape
+    iPhone: com.moonlitsicku.shadowtileescape
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -257,7 +257,7 @@ PlayerSettings:
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
   VisionOSManualSigningProvisioningProfileType: 0
-  appleEnableAutomaticSigning: 0
+  appleEnableAutomaticSigning: 1
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
