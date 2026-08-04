@@ -1,0 +1,17 @@
+[mcp_servers.anklebreaker_unity]
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+args = ["/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Tools/unity-mcp-server/src/index.js"]
+cwd = "/Users/mehranmughal/Documents/Game Development/ShadowTileEscape/Tools/unity-mcp-server"
+startup_timeout_sec = 120
+tool_timeout_sec = 180
+required = true
+enabled = true
+
+[mcp_servers.anklebreaker_unity.env]
+UNITY_BRIDGE_HOST = "127.0.0.1"
+UNITY_BRIDGE_PORT = "7890"
+UNITY_HUB_PATH = "/Applications/Unity Hub.app/Contents/MacOS/Unity Hub"
+UNITY_INSTANCE_REGISTRY = "/Users/mehranmughal/.local/share/UnityMCP/instances.json"
+UNITY_PORT_RANGE_START = "7890"
+UNITY_PORT_RANGE_END = "7899"
+UNITY_MCP_DEBUG = "1"
