@@ -7,6 +7,12 @@
 [Uu]ser[Ss]ettings/
 MemoryCaptures/
 .utmp/
+/.codex/
+/.vscode/
+/Assets/Screenshots/
+/Assets/Screenshots.meta
+/ipad*.png
+/iphone*.png
 
 .DS_Store
 *.csproj
